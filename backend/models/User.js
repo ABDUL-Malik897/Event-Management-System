@@ -16,15 +16,74 @@ const userSchema = new mongoose.Schema(
             lowercase : true,
             trim : true,
         },
+        phone: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
         password : {
             type : String,
             required : [true, "Password is required"],
             minLength : 6,
         },
+        isEmailVerified: {
+            type: Boolean,
+            default: false
+        },
+
+        isPhoneVerified: {
+            type: Boolean,
+            default: false
+        },
+
+        otp: {
+            type: String,
+            default: null
+        },
+
+        otpExpiry: {
+            type: Date,
+            default: null
+        },
+
+        otpPurpose: {
+            type: String,
+            enum: [
+                "signup",
+                "login",
+                "forgot-password",
+                "reset-password",
+                null
+            ],
+            default: null
+        },
+        otpLastSentAt: {
+            type: Date,
+            default: null
+        },
+        isVerified: {
+            type: Boolean,
+            default: false
+        },
         role : {
             type : String,
-            enum : ["user", "organizer","admin"],
+            enum : ["user","organizer","admin"],
             default : "user"
+        },
+        organizerStatus : {
+            type : String,
+            enum : ["none" ,'pending' , "approved","rejected"],
+            default : "none" 
+        },
+        membershipStatus : {
+            type : String,
+            enum : ["inactive", "active"],
+            default : "inactive"
+        },
+        membershipExpiry : {
+            type : Date,
+            default : null
         },
         profilePic : {
             type : String,

@@ -1,0 +1,86 @@
+.profile-avatar-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar-button {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    /* border-radius: 50%; */
+
+    /* background: linear-gradient(
+        135deg,
+        #e84393,
+        #6c5ce7
+    ); */
+
+    background-color: transparent;
+
+    /* color: white; */
+
+    color: #6c5ce7;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+
+    margin-top: -2px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.profile-avatar-button:hover:not(:disabled) {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 5px 15px
+        rgba(108, 92, 231, 0.3);
+}
+
+.profile-avatar-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.profile-avatar-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.profile-avatar-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.profile-avatar-loading {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.profile-avatar-input {
+    display: none;
+}

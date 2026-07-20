@@ -2,59 +2,99 @@ import mongoose from "mongoose";
 
 const ticketSchema = new mongoose.Schema(
     {
-        qrCode : {
-            type : String,
-            default : ""
+        ticketId: {
+            type: String,
+            required: true,
+            unique: true
         },
-        checkedIn : {
-            type : Boolean,
-            default : false
+
+        qrCode: {
+            type: String,
+            default: ""
         },
-        seatNumber : {
-            type : String,
-            default : ""
+
+        checkedIn: {
+            type: Boolean,
+            default: false
         },
-    },{
-        _id : false
+
+        checkedInAt: {
+            type: Date,
+            default: null
+        },
+
+        seatNumber: {
+            type: String,
+            default: ""
+        }
+    },
+    {
+        _id: false
     }
-)
+);
 
 const bookingSchema = new mongoose.Schema(
     {
-        user : {
-            type : mongoose.Schema.Types.ObjectId,
-            ref : "User",
-            required : true
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true
         },
-        event : {
-            type : mongoose.Schema.Types.ObjectId,
-            ref : "Event",
-            required : true
+
+        event: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Event",
+            required: true
         },
-        tickets : {
-            type : [ticketSchema],
-            required : true,
+
+        tickets: {
+            type: [ticketSchema],
+            required: true
         },
-        totalAmount : {
-            type : Number,
-            required : true
+
+        quantity: {
+            type: Number,
+            required: true
         },
-        bookingStatus : {
-            type : String,
-            enum : ["Booked" , "Cancelled"],
-            default : "Booked"
+
+        ticketPrice: {
+            type: Number,
+            required: true
         },
-        paymentStatus : {
-            type : String,
-            enum : ["Pending" , "Paid" , "Failed"],
-            default : "Pending"
+
+        totalAmount: {
+            type: Number,
+            required: true
+        },
+
+        bookingStatus: {
+            type: String,
+            enum: ["Booked", "Cancelled"],
+            default: "Booked"
+        },
+
+        paymentStatus: {
+            type: String,
+            enum: ["Pending", "Paid", "Failed","Refunded"],
+            default: "Pending"
+        },
+
+        razorpayOrderId: {
+            type: String,
+            unique: true,
+            sparse: true
+        },
+
+        razorpayPaymentId: {
+            type: String,
+            sparse : true
         },
     },
     {
-        timestamps : true
+        timestamps: true
     }
-)
+);
 
-const Booking = mongoose.model("Booking" ,bookingSchema)
+const Booking = mongoose.model("Booking", bookingSchema);
 
 export default Booking;

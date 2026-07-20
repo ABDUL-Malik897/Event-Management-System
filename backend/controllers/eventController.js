@@ -81,7 +81,7 @@ export const updateEvent = async (req ,res) => {
         res.status(200).json({
             success : true,
             message : "Event updated Successfully",
-            event : updateEvent,
+            event : updatedEvent,
         })
     } catch (error) {
         console.log(error);
@@ -107,9 +107,7 @@ export const deleteEvent = async (req ,res) => {
                 message : "Not Authorized"
             })
         }
-
         await event.deleteOne()
-
         res.status(200).json({
             success : true,
             message : "Event Deleted Successfully",

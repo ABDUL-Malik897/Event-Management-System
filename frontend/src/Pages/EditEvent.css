@@ -1,0 +1,645 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.edit-event-page {
+    width: 88%;
+    max-width: 1050px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 40px 0 100px;
+
+    color: #252b38;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.edit-event-hero {
+    min-height: 190px;
+
+    margin-bottom: 45px;
+    padding: 45px 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 206, 201, 0.4),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #4b36c7,
+            #6c5ce7 50%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+.edit-event-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -80px;
+    top: -160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.edit-event-hero > div {
+    position: relative;
+    z-index: 2;
+}
+
+
+.edit-event-label {
+    display: inline-block;
+
+    margin: 0 0 12px;
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.edit-event-hero h1 {
+    margin: 0 0 10px;
+
+    font-size:
+        clamp(38px, 5vw, 52px);
+
+    letter-spacing: -1.5px;
+}
+
+
+.edit-event-hero p:last-child {
+    max-width: 520px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.edit-event-hero-icon {
+    margin-right: 6%;
+
+    font-size: 70px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.edit-event-section-header {
+    margin-bottom: 25px;
+}
+
+
+.edit-event-section-header > p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.edit-event-section-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 29px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.edit-event-section-header > span {
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.edit-event-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.edit-event-form-section {
+    padding: 30px;
+
+    border:
+        1px solid #e7e7ef;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.045);
+}
+
+
+/* =========================================
+   FORM SECTION TITLE
+========================================= */
+
+.edit-event-form-title {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.edit-event-form-title > div {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #f0edff;
+
+    font-size: 18px;
+}
+
+
+.edit-event-form-title span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.edit-event-form-title strong {
+    color: #303744;
+
+    font-size: 14px;
+}
+
+
+.edit-event-form-title small {
+    color: #959ba5;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.edit-event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.edit-event-field {
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.edit-event-field:last-child {
+    margin-bottom: 0;
+}
+
+
+.edit-event-field label {
+    color: #505763;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.edit-event-field input,
+.edit-event-field textarea,
+.edit-event-field select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid #dedee8;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    color: #343b47;
+
+    background: #fcfcfe;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.edit-event-field textarea {
+    min-height: 110px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.edit-event-field input:focus,
+.edit-event-field textarea:focus,
+.edit-event-field select:focus {
+    border-color: #6c5ce7;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(108, 92, 231, 0.08);
+}
+
+
+.edit-event-field input::placeholder,
+.edit-event-field textarea::placeholder {
+    color: #aaaeb6;
+}
+
+
+/* =========================================
+   BANNER PREVIEW
+========================================= */
+
+.edit-event-banner-preview {
+    margin-top: 20px;
+}
+
+
+.edit-event-banner-preview p {
+    margin: 0 0 10px;
+
+    color: #555d68;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.edit-event-banner-preview img {
+    width: 100%;
+    max-height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #e4e4ec;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.edit-event-actions {
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+.edit-event-actions button {
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.edit-event-actions button:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+.edit-event-cancel {
+    color: #555d68;
+
+    background: #eeeeF3;
+}
+
+
+.edit-event-submit {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.edit-event-submit:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+    transform: none;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.edit-event-loading {
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.edit-event-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #eeeeee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        editEventSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes editEventSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.edit-event-loading h2 {
+    margin: 0 0 7px;
+}
+
+
+.edit-event-loading p {
+    margin: 0;
+
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.edit-event-error {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.edit-event-error-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: #d63031;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+.edit-event-error h2 {
+    margin: 0 0 8px;
+}
+
+
+.edit-event-error p {
+    margin: 0 0 20px;
+
+    color: #8a919d;
+}
+
+
+.edit-event-error button {
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .edit-event-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .edit-event-hero {
+        min-height: auto;
+
+        padding: 35px 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .edit-event-hero-icon {
+        display: none;
+    }
+
+
+    .edit-event-hero h1 {
+        font-size: 37px;
+    }
+
+
+    .edit-event-form-section {
+        padding: 22px;
+    }
+
+
+    .edit-event-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .edit-event-actions {
+        flex-direction: column-reverse;
+    }
+
+
+    .edit-event-actions button {
+        width: 100%;
+    }
+
+}

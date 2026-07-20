@@ -1,0 +1,821 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.admin-reqs-page {
+    width: 88%;
+    max-width: 1100px;
+
+    min-height: 85vh;
+
+    margin: 0 auto;
+
+    padding: 50px 0 90px;
+
+    color: #1f2937;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-reqs-header {
+
+    margin-bottom: 35px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed,
+            #2563eb
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(79, 70, 229, 0.2);
+}
+
+
+.admin-reqs-label {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #ddd6fe;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.admin-reqs-header h1 {
+
+    margin: 0 0 10px;
+
+    font-size:
+        clamp(30px, 5vw, 43px);
+
+    line-height: 1.1;
+}
+
+
+.admin-reqs-header p {
+
+    max-width: 620px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   PENDING COUNT
+========================================= */
+
+.admin-reqs-count {
+
+    min-width: 145px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    backdrop-filter:
+        blur(10px);
+
+    text-align: center;
+}
+
+
+.admin-reqs-count span {
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 11px;
+}
+
+
+.admin-reqs-count strong {
+
+    margin-top: 5px;
+
+    font-size: 35px;
+}
+
+
+/* =========================================
+   REQUEST LIST
+========================================= */
+
+.admin-reqs-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   REQUEST CARD
+========================================= */
+
+.admin-request-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px
+        rgba(31, 41, 55, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.admin-request-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(79, 70, 229, 0.12);
+}
+
+
+/* =========================================
+   REQUEST HEADER
+========================================= */
+
+.admin-request-header {
+
+    padding: 25px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f7ff,
+            #f1f7ff
+        );
+
+    border-bottom:
+        1px solid #e8e8f0;
+}
+
+
+.admin-request-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.admin-user-avatar {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    box-shadow:
+        0 7px 17px
+        rgba(79, 70, 229, 0.25);
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+.admin-request-number {
+
+    color: #7c3aed;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.admin-request-user h2 {
+
+    margin: 3px 0;
+
+    color: #1f2937;
+
+    font-size: 21px;
+}
+
+
+.admin-request-user p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PENDING BADGE
+========================================= */
+
+.admin-pending-badge {
+
+    flex-shrink: 0;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    color: #b45309;
+
+    background: #fef3c7;
+
+    border:
+        1px solid #fde68a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.admin-request-section {
+
+    padding:
+        22px 28px 0;
+}
+
+
+.admin-request-section h3 {
+
+    margin: 0 0 15px;
+
+    color: #374151;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   INFORMATION GRID
+========================================= */
+
+.admin-request-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.admin-request-info {
+
+    padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    border-radius: 11px;
+
+    background: #f8f9fc;
+
+    border:
+        1px solid #ececf2;
+}
+
+
+.admin-request-info span {
+
+    color: #9ca3af;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.admin-request-info strong {
+
+    color: #374151;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   ADDRESS
+========================================= */
+
+.admin-request-text {
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background: #f8f9fc;
+
+    color: #4b5563;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   REASON
+========================================= */
+
+.admin-request-reason {
+
+    padding: 18px;
+
+    display: flex;
+
+    gap: 10px;
+
+    border-left:
+        4px solid #7c3aed;
+
+    border-radius:
+        0 11px 11px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f3ff,
+            #f8f7ff
+        );
+}
+
+
+.admin-request-reason > span {
+
+    color: #7c3aed;
+
+    font-size: 30px;
+
+    font-family: Georgia, serif;
+
+    line-height: 1;
+}
+
+
+.admin-request-reason p {
+
+    margin: 0;
+
+    color: #5b6472;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.admin-request-actions {
+
+    margin-top: 25px;
+
+    padding: 20px 28px;
+
+    display: flex;
+
+    gap: 12px;
+
+    border-top:
+        1px solid #eeeeF3;
+
+    background: #fafafa;
+}
+
+
+.admin-request-actions button {
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.admin-request-actions button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* APPROVE */
+
+.admin-approve-btn {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981
+        );
+
+    box-shadow:
+        0 6px 15px
+        rgba(16, 185, 129, 0.2);
+}
+
+
+.admin-approve-btn:hover {
+
+    box-shadow:
+        0 9px 20px
+        rgba(16, 185, 129, 0.3);
+}
+
+
+/* REJECT */
+
+.admin-reject-btn {
+
+    color: #dc2626;
+
+    background: #fee2e2;
+
+    border:
+        1px solid
+        #fecaca !important;
+}
+
+
+.admin-reject-btn:hover {
+
+    background: #fecaca;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-reqs-empty {
+
+    min-height: 350px;
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px
+        rgba(31, 41, 55, 0.06);
+}
+
+
+.admin-empty-icon {
+
+    width: 80px;
+    height: 80px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ede9fe,
+            #dbeafe
+        );
+
+    font-size: 35px;
+}
+
+
+.admin-reqs-empty h2 {
+
+    margin:
+        0 0 8px;
+
+    font-size: 24px;
+}
+
+
+.admin-reqs-empty p {
+
+    max-width: 450px;
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.admin-reqs-loading {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.admin-reqs-spinner {
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #e5e7eb;
+
+    border-top-color:
+        #6366f1;
+
+    border-radius: 50%;
+
+    animation:
+        adminReqSpin
+        0.8s linear
+        infinite;
+}
+
+
+@keyframes adminReqSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+.admin-reqs-loading h2 {
+
+    margin:
+        0 0 8px;
+}
+
+
+.admin-reqs-loading p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .admin-reqs-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .admin-reqs-count {
+
+        min-width: 120px;
+    }
+
+
+    .admin-request-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .admin-reqs-page {
+
+        width: 92%;
+
+        padding:
+            25px 0
+            60px;
+    }
+
+
+    .admin-reqs-header {
+
+        padding: 25px;
+    }
+
+
+    .admin-request-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .admin-request-user {
+
+        align-items:
+            flex-start;
+    }
+
+
+    .admin-request-section {
+
+        padding:
+            20px 20px 0;
+    }
+
+
+    .admin-request-actions {
+
+        padding: 20px;
+
+        flex-direction:
+            column;
+    }
+
+
+    .admin-request-actions button {
+
+        width: 100%;
+    }
+
+
+    .admin-reqs-empty {
+
+        padding:
+            40px 20px;
+    }
+
+}

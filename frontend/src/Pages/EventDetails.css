@@ -1,0 +1,933 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.event-details-page {
+    width: 88%;
+    max-width: 1250px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+
+    color: #252b38;
+}
+
+
+/* =========================================
+   BANNER
+========================================= */
+
+.event-details-banner {
+    width: 100%;
+    height: 450px;
+
+    margin-bottom: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #252b38;
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.event-details-banner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.event-details-banner::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(20, 15, 55, 0.9),
+            rgba(20, 15, 55, 0.15) 65%
+        );
+}
+
+
+.event-banner-overlay {
+    position: absolute;
+
+    left: 45px;
+    right: 45px;
+    bottom: 40px;
+
+    z-index: 2;
+
+    color: white;
+}
+
+
+.event-category-badge {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.event-banner-overlay h1 {
+    max-width: 800px;
+
+    margin: 0 0 10px;
+
+    font-size:
+        clamp(35px, 5vw, 55px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+
+.event-banner-overlay p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.event-details-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(320px, 0.7fr);
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   EVENT INFORMATION
+========================================= */
+
+.event-info-section {
+    min-width: 0;
+}
+
+
+.event-info-header {
+    margin-bottom: 20px;
+}
+
+
+.event-info-header p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.event-info-header h2 {
+    margin: 0;
+
+    font-size: 29px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.event-description {
+    margin: 0 0 30px;
+
+    color: #6e7580;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   INFO GRID
+========================================= */
+
+.event-info-grid {
+    margin-bottom: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+.event-info-card {
+    min-height: 75px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 14px;
+
+    background: white;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.event-info-card:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(108, 92, 231, 0.1);
+}
+
+
+.event-info-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0edff,
+            #e7f5ff
+        );
+
+    font-size: 19px;
+}
+
+
+.event-info-card > div:last-child {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.event-info-card span {
+    color: #969ca5;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+.event-info-card strong {
+    overflow-wrap: anywhere;
+
+    color: #343b47;
+
+    font-size: 12px;
+}
+
+
+.event-info-card small {
+    color: #999fa8;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   AVAILABILITY
+========================================= */
+
+.event-availability {
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border:
+        1px solid #c9f5e8;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0fff9,
+            #f1fffe
+        );
+}
+
+
+.event-availability-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: #dcfff4;
+
+    font-size: 22px;
+}
+
+
+.event-availability span {
+    color: #00a884;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.event-availability h3 {
+    margin: 3px 0;
+
+    font-size: 16px;
+}
+
+
+.event-availability p {
+    margin: 0;
+
+    color: #7e8b87;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   BOOKING CARD
+========================================= */
+
+.event-booking-card {
+    padding: 28px;
+
+    position: sticky;
+
+    top: 30px;
+
+    border:
+        1px solid #e7e7ef;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+.event-booking-header {
+    margin-bottom: 25px;
+}
+
+
+.event-booking-header > p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.event-booking-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 23px;
+}
+
+
+.event-booking-header > span {
+    color: #969ca5;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TICKET PRICE
+========================================= */
+
+.event-ticket-price {
+    margin-bottom: 25px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f1ff,
+            #edf7ff
+        );
+}
+
+
+.event-ticket-price span {
+    color: #777e89;
+
+    font-size: 10px;
+}
+
+
+.event-ticket-price strong {
+    color: #6c5ce7;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   QUANTITY
+========================================= */
+
+.event-quantity-section {
+    margin-bottom: 25px;
+}
+
+
+.event-quantity-section > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #505763;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.event-quantity-selector {
+    display: grid;
+
+    grid-template-columns:
+        45px 1fr 45px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #dedee8;
+
+    border-radius: 10px;
+}
+
+
+.event-quantity-selector button {
+    height: 45px;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #6c5ce7;
+
+    background: #f6f4ff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.event-quantity-selector button:hover:not(:disabled) {
+    background: #e9e4ff;
+}
+
+
+.event-quantity-selector button:disabled {
+    cursor: not-allowed;
+
+    color: #b8b8c0;
+
+    background: #f5f5f7;
+}
+
+
+.event-quantity-value {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-left:
+        1px solid #dedee8;
+
+    border-right:
+        1px solid #dedee8;
+
+    background: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.event-quantity-section > small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #999fa8;
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   ORDER SUMMARY
+========================================= */
+
+.event-order-summary {
+    margin-bottom: 22px;
+
+    padding: 17px;
+
+    border:
+        1px solid #eeeeF3;
+
+    border-radius: 11px;
+
+    background: #fcfcfe;
+}
+
+
+.event-order-summary > div {
+    margin-bottom: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.event-order-summary span {
+    color: #838a94;
+
+    font-size: 9px;
+}
+
+
+.event-order-summary strong {
+    font-size: 10px;
+}
+
+
+.event-order-summary hr {
+    margin: 14px 0;
+
+    border: none;
+
+    border-top:
+        1px solid #e5e5ec;
+}
+
+
+.event-order-summary .event-order-total {
+    margin-bottom: 0;
+
+    align-items: center;
+}
+
+
+.event-order-total span {
+    color: #343b47;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.event-order-total strong {
+    color: #6c5ce7;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   PAYMENT BUTTON
+========================================= */
+
+.event-payment-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(108, 92, 231, 0.25);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.event-payment-button:hover:not(:disabled) {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(108, 92, 231, 0.3);
+}
+
+
+.event-payment-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+
+    transform: none;
+}
+
+
+/* =========================================
+   SECURE PAYMENT
+========================================= */
+
+.event-secure-payment {
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    color: #949aa4;
+}
+
+
+.event-secure-payment span {
+    font-size: 9px;
+}
+
+
+.event-secure-payment p {
+    margin: 0;
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.event-details-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.event-details-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #eeeeee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        eventDetailsSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes eventDetailsSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.event-details-loading h2 {
+    margin: 0 0 7px;
+}
+
+
+.event-details-loading p {
+    margin: 0;
+
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.event-details-not-found {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.event-details-not-found > div {
+    margin-bottom: 10px;
+
+    font-size: 55px;
+}
+
+
+.event-details-not-found h2 {
+    margin: 0 0 7px;
+}
+
+
+.event-details-not-found p {
+    margin: 0 0 20px;
+
+    color: #8a919d;
+}
+
+
+.event-details-not-found button {
+    padding: 11px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .event-details-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .event-booking-card {
+        position: static;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .event-details-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .event-details-banner {
+        height: 380px;
+
+        border-radius: 18px;
+    }
+
+
+    .event-banner-overlay {
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 25px;
+    }
+
+
+    .event-banner-overlay h1 {
+        font-size: 34px;
+    }
+
+
+    .event-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .event-booking-card {
+        padding: 22px;
+    }
+
+}

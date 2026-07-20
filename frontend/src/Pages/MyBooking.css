@@ -1,0 +1,638 @@
+/* =========================================
+   MY BOOKINGS PAGE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.my-bookings-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding-bottom: 100px;
+
+    color: #18212f;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f7ff 0%,
+            #ffffff 45%
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.my-bookings-hero {
+    width: 92%;
+    max-width: 1400px;
+
+    min-height: 310px;
+
+    margin: 35px auto 70px;
+
+    padding: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(253, 121, 168, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 70% 100%,
+            rgba(0, 206, 201, 0.3),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #6c5ce7 0%,
+            #7158e2 45%,
+            #0984e3 100%
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.my-bookings-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -90px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.my-bookings-hero-content {
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.my-bookings-hero-label {
+    display: inline-block;
+
+    margin: 0 0 18px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+.my-bookings-hero h1 {
+    margin: 0 0 18px;
+
+    font-size:
+        clamp(42px, 5vw, 60px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.my-bookings-hero-content > p:last-child {
+    max-width: 600px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.my-bookings-hero-icon {
+    position: relative;
+
+    z-index: 2;
+
+    margin-right: 8%;
+
+    font-size: 100px;
+
+    transform: rotate(8deg);
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.my-bookings-section {
+    width: 88%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.my-bookings-header {
+    margin-bottom: 30px;
+}
+
+
+.my-bookings-header > div {
+    max-width: 700px;
+}
+
+
+.my-bookings-label {
+    margin: 0 0 8px;
+
+    color: #6c5ce7;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.my-bookings-header h2 {
+    margin: 0 0 10px;
+
+    color: #18212f;
+
+    font-size: 36px;
+}
+
+
+.my-bookings-header
+> div
+> p:last-child {
+
+    margin: 0;
+
+    color: #687080;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOOKING STATS
+========================================= */
+
+.my-bookings-stats {
+    margin-bottom: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.booking-stat-card {
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border:
+        1px solid #ececf2;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3f0ff,
+            #edf7ff
+        );
+
+    box-shadow:
+        0 7px 25px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.booking-stat-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(108, 92, 231, 0.12);
+}
+
+
+.booking-stat-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+.booking-stat-card > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.booking-stat-card span {
+    color: #687080;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.booking-stat-card strong {
+    color: #18212f;
+
+    font-size: 27px;
+}
+
+
+/* ACTIVE STAT */
+
+.booking-stat-active {
+    background:
+        linear-gradient(
+            135deg,
+            #edfff8,
+            #e8fff5
+        );
+}
+
+
+.booking-stat-active
+.booking-stat-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00b894,
+            #00cec9
+        );
+}
+
+
+/* CANCELLED STAT */
+
+.booking-stat-cancelled {
+    background:
+        linear-gradient(
+            135deg,
+            #fff2f4,
+            #fff7f7
+        );
+}
+
+
+.booking-stat-cancelled
+.booking-stat-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e17055,
+            #d63031
+        );
+}
+
+
+/* =========================================
+   BOOKINGS LIST
+========================================= */
+
+.my-bookings-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+.my-booking-item {
+    width: 100%;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.my-booking-item:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.my-bookings-empty {
+    padding: 80px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(253, 121, 168, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f3efff,
+            #edf8ff
+        );
+}
+
+
+.my-bookings-empty-icon {
+    margin-bottom: 20px;
+
+    font-size: 70px;
+}
+
+
+.my-bookings-empty h2 {
+    margin: 0 0 12px;
+
+    color: #18212f;
+
+    font-size: 30px;
+}
+
+
+.my-bookings-empty p {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: #687080;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.my-bookings-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+.my-bookings-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    border:
+        5px solid #eee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        myBookingsLoaderSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes myBookingsLoaderSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.my-bookings-loading h2 {
+    margin: 0 0 10px;
+
+    color: #18212f;
+}
+
+
+.my-bookings-loading p {
+    margin: 0;
+
+    color: #687080;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .my-bookings-hero {
+        padding: 50px 35px;
+    }
+
+
+    .my-bookings-hero-icon {
+        margin-right: 2%;
+
+        font-size: 80px;
+
+        opacity: 0.7;
+    }
+
+
+    .my-bookings-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .my-bookings-page {
+        padding-bottom: 60px;
+    }
+
+
+    .my-bookings-hero {
+        width: 94%;
+
+        min-height: auto;
+
+        margin-top: 15px;
+
+        margin-bottom: 55px;
+
+        padding: 45px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .my-bookings-hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .my-bookings-hero-content
+    > p:last-child {
+
+        font-size: 15px;
+    }
+
+
+    .my-bookings-hero-icon {
+        display: none;
+    }
+
+
+    .my-bookings-section {
+        width: 92%;
+    }
+
+
+    .my-bookings-header h2 {
+        font-size: 30px;
+    }
+
+
+    .my-bookings-stats {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .booking-stat-card {
+        padding: 18px;
+    }
+
+
+    .my-bookings-list {
+        gap: 18px;
+    }
+
+}

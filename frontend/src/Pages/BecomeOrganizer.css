@@ -1,0 +1,839 @@
+/* =========================================
+   BECOME ORGANIZER PAGE
+========================================= */
+
+.become-organizer-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding-bottom: 100px;
+
+    color: #18212f;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f7ff 0%,
+            #ffffff 55%
+        );
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.organizer-hero {
+    width: 92%;
+    max-width: 1400px;
+
+    min-height: 330px;
+
+    margin: 35px auto 75px;
+
+    padding: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(253, 121, 168, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 65% 100%,
+            rgba(0, 206, 201, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #6c5ce7 0%,
+            #7158e2 45%,
+            #0984e3 100%
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.organizer-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -90px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.organizer-hero-content {
+    max-width: 720px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.organizer-hero-label {
+    display: inline-block;
+
+    margin: 0 0 18px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+.organizer-hero h1 {
+    margin: 0 0 18px;
+
+    font-size:
+        clamp(42px, 5vw, 60px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.organizer-hero-content > p:last-child {
+    max-width: 620px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.organizer-hero-icon {
+    position: relative;
+
+    z-index: 2;
+
+    margin-right: 8%;
+
+    font-size: 100px;
+
+    transform: rotate(7deg);
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.organizer-main-section {
+    width: 88%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(450px, 1.1fr);
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   INFORMATION SECTION
+========================================= */
+
+.organizer-info-section {
+    padding-top: 15px;
+}
+
+
+.organizer-section-label {
+    margin: 0 0 8px;
+
+    color: #6c5ce7;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.organizer-info-section > h2 {
+    margin: 0 0 15px;
+
+    color: #18212f;
+
+    font-size: 38px;
+
+    letter-spacing: -1px;
+}
+
+
+.organizer-info-description {
+    margin: 0 0 35px;
+
+    color: #687080;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.organizer-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.organizer-benefit-card {
+    padding: 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    border:
+        1px solid #ececf3;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.organizer-benefit-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(108, 92, 231, 0.1);
+}
+
+
+.organizer-benefit-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0edff,
+            #e9f8ff
+        );
+
+    font-size: 19px;
+}
+
+
+.organizer-benefit-card h3 {
+    margin: 0 0 6px;
+
+    color: #2d3440;
+
+    font-size: 14px;
+}
+
+
+.organizer-benefit-card p {
+    margin: 0;
+
+    color: #7a818d;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   APPLICATION PROCESS
+========================================= */
+
+.organizer-process {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3f0ff,
+            #edf8ff
+        );
+}
+
+
+.organizer-process > h3 {
+    margin:
+        0 0 20px;
+
+    color: #2d3440;
+
+    font-size: 17px;
+}
+
+
+.organizer-process-step {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.organizer-process-step:last-child {
+    margin-bottom: 0;
+}
+
+
+.organizer-process-step span {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+.organizer-process-step p {
+    margin: 0;
+
+    color: #626a76;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM CONTAINER
+========================================= */
+
+.organizer-form-container {
+    padding: 35px;
+
+    border:
+        1px solid #e8e8f0;
+
+    border-radius: 22px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 45px
+        rgba(72, 61, 139, 0.1);
+}
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.organizer-form-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.organizer-form-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 24px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+.organizer-form-header p {
+    margin: 0 0 4px;
+
+    color: #6c5ce7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.organizer-form-header h2 {
+    margin: 0;
+
+    color: #18212f;
+
+    font-size: 28px;
+}
+
+
+.organizer-form-description {
+    margin:
+        20px 0 28px;
+
+    padding-bottom: 22px;
+
+    border-bottom:
+        1px solid #eeeeee;
+
+    color: #727985;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.organizer-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.organizer-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.organizer-form-group label {
+    color: #343b47;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.organizer-form-group input,
+.organizer-form-group textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border:
+        1px solid #dfe1e8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: #2d3440;
+
+    background: #fafbfc;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.organizer-form-group textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+.organizer-form-group input::placeholder,
+.organizer-form-group textarea::placeholder {
+    color: #a3a8b1;
+}
+
+
+.organizer-form-group input:focus,
+.organizer-form-group textarea:focus {
+    border-color: #6c5ce7;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(108, 92, 231, 0.1);
+}
+
+
+.organizer-form-group small {
+    color: #9298a3;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.organizer-submit-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 5px;
+
+    padding:
+        13px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(108, 92, 231, 0.23);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.organizer-submit-button:hover:not(:disabled) {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(108, 92, 231, 0.3);
+}
+
+
+.organizer-submit-button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   BUTTON LOADER
+========================================= */
+
+.organizer-button-loader {
+    width: 17px;
+    height: 17px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.4);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+        organizerLoaderSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+@keyframes organizerLoaderSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   FORM NOTE
+========================================= */
+
+.organizer-form-note {
+    margin: 0;
+
+    color: #9298a3;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .organizer-main-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .organizer-hero-icon {
+        margin-right: 2%;
+
+        font-size: 80px;
+    }
+
+
+    .organizer-form-container {
+        max-width: 700px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .become-organizer-page {
+        padding-bottom: 60px;
+    }
+
+
+    .organizer-hero {
+        width: 94%;
+
+        min-height: auto;
+
+        margin:
+            15px auto
+            55px;
+
+        padding:
+            45px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .organizer-hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .organizer-hero-content
+    > p:last-child {
+
+        font-size: 15px;
+    }
+
+
+    .organizer-hero-icon {
+        display: none;
+    }
+
+
+    .organizer-main-section {
+        width: 92%;
+
+        gap: 40px;
+    }
+
+
+    .organizer-info-section > h2 {
+        font-size: 31px;
+    }
+
+
+    .organizer-benefits {
+        grid-template-columns: 1fr;
+    }
+
+
+    .organizer-form-container {
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+
+    .organizer-form-header h2 {
+        font-size: 24px;
+    }
+
+
+    .organizer-form-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 21px;
+    }
+
+}

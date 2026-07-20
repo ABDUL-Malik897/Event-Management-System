@@ -1,0 +1,1141 @@
+/* =========================================
+   ORGANIZER DASHBOARD
+========================================= */
+
+.organizer-dashboard-page {
+    width: 88%;
+    max-width: 1400px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 50px 0 100px;
+
+    color: #18212f;
+}
+
+
+/* =========================================
+   DASHBOARD HEADER
+========================================= */
+
+.organizer-dashboard-header {
+    margin-bottom: 45px;
+    padding: 45px 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(0, 206, 201, 0.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #4b36c7,
+            #6c5ce7 50%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+.organizer-dashboard-header::after {
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+
+    right: -120px;
+    top: -160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.organizer-dashboard-header > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.organizer-dashboard-label {
+    display: inline-block;
+
+    margin: 0 0 12px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+.organizer-dashboard-header h1 {
+    margin: 0 0 12px;
+
+    font-size:
+        clamp(35px, 4vw, 50px);
+
+    letter-spacing: -1.5px;
+}
+
+
+.organizer-dashboard-description {
+    max-width: 600px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* CREATE EVENT BUTTON */
+
+.organizer-dashboard-create-btn {
+    min-width: 165px;
+
+    padding: 14px 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-radius: 11px;
+
+    color: #5c4ad1;
+
+    background: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.organizer-dashboard-create-btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+.organizer-dashboard-plus {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.organizer-dashboard-stats {
+    margin-bottom: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.organizer-stat-card {
+    padding: 25px;
+
+    border:
+        1px solid #ececf3;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.organizer-stat-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(108, 92, 231, 0.12);
+}
+
+
+.organizer-stat-top {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.organizer-stat-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+
+.stat-events {
+    background:
+        linear-gradient(
+            135deg,
+            #ede9ff,
+            #ddd6ff
+        );
+}
+
+
+.stat-tickets {
+    background:
+        linear-gradient(
+            135deg,
+            #e2f8ff,
+            #d5f3ff
+        );
+}
+
+
+.stat-revenue {
+    color: #00876a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddfff4,
+            #c9f8e9
+        );
+}
+
+
+.stat-upcoming {
+    background:
+        linear-gradient(
+            135deg,
+            #fff1df,
+            #ffe5c3
+        );
+}
+
+
+.organizer-stat-badge {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    color: #777f8c;
+
+    background: #f6f6fa;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.organizer-stat-content p {
+    margin: 0 0 7px;
+
+    color: #8a919d;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.organizer-stat-content h2 {
+    margin: 0;
+
+    color: #222936;
+
+    font-size: 30px;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.organizer-dashboard-actions {
+    margin-bottom: 70px;
+    padding: 28px 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border:
+        1px solid #e8e8f0;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #f6fbff
+        );
+}
+
+
+.organizer-dashboard-section-label {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.organizer-dashboard-actions h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+.organizer-dashboard-action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.dashboard-action-btn {
+    padding: 11px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border:
+        1px solid #e1dfff;
+
+    border-radius: 9px;
+
+    color: #5146aa;
+
+    background: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.dashboard-action-btn:hover {
+    transform:
+        translateY(-2px);
+
+    background: #f2efff;
+}
+
+
+/* =========================================
+   EVENTS SECTION
+========================================= */
+
+.organizer-events-section {
+    width: 100%;
+}
+
+
+.organizer-events-header {
+    margin-bottom: 30px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.organizer-events-header h2 {
+    margin: 0 0 7px;
+
+    font-size: 32px;
+
+    letter-spacing: -1px;
+}
+
+
+.organizer-events-header > div:first-child > p:last-child {
+    margin: 0;
+
+    color: #858c98;
+
+    font-size: 12px;
+}
+
+
+.organizer-events-count {
+    min-width: 85px;
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ede9ff,
+            #e7f5ff
+        );
+}
+
+
+.organizer-events-count strong {
+    color: #6c5ce7;
+
+    font-size: 20px;
+}
+
+
+.organizer-events-count span {
+    color: #777f8c;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   EVENTS GRID
+========================================= */
+
+.organizer-events-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   EVENT CARD
+========================================= */
+
+.organizer-event-card {
+    overflow: hidden;
+
+    border:
+        1px solid #e8e8ef;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.organizer-event-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(108, 92, 231, 0.12);
+}
+
+
+/* =========================================
+   EVENT BANNER
+========================================= */
+
+.organizer-event-banner {
+    height: 200px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+}
+
+
+.organizer-event-banner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.organizer-event-card:hover
+.organizer-event-banner img {
+    transform:
+        scale(1.04);
+}
+
+
+.organizer-event-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+}
+
+
+.organizer-event-category {
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    color: #333946;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+/* =========================================
+   EVENT CONTENT
+========================================= */
+
+.organizer-event-content {
+    padding: 25px;
+}
+
+
+.organizer-event-main-info h3 {
+    margin: 0 0 15px;
+
+    color: #222936;
+
+    font-size: 21px;
+}
+
+
+.organizer-event-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.organizer-event-info p {
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #737b87;
+
+    font-size: 11px;
+}
+
+
+.organizer-event-info p span {
+    width: 20px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MINI STATS
+========================================= */
+
+.organizer-event-mini-stats {
+    margin: 22px 0;
+
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f7ff,
+            #f5faff
+        );
+}
+
+
+.organizer-event-mini-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.organizer-event-mini-stats span {
+    color: #979da7;
+
+    font-size: 9px;
+}
+
+
+.organizer-event-mini-stats strong {
+    color: #353c48;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PRIMARY ACTIONS
+========================================= */
+
+.organizer-event-primary-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.organizer-event-btn {
+    padding: 11px 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.organizer-event-btn:hover {
+    transform:
+        translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+.event-edit-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #5947cc
+        );
+}
+
+
+.event-attendees-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0984e3,
+            #00a8ff
+        );
+}
+
+
+/* =========================================
+   SECONDARY ACTIONS
+========================================= */
+
+.organizer-event-secondary-actions {
+    margin-top: 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+
+.organizer-event-small-btn,
+.organizer-event-delete-btn {
+    padding: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #e6e6ee;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    color: #59606c;
+
+    background: #fafafa;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.organizer-event-small-btn:hover {
+    color: #6c5ce7;
+
+    background: #f2efff;
+}
+
+
+.organizer-event-delete-btn {
+    color: #d63031;
+
+    border-color: #ffd9dc;
+
+    background: #fff5f5;
+}
+
+
+.organizer-event-delete-btn:hover {
+    color: white;
+
+    background: #d63031;
+}
+
+
+/* =========================================
+   NO EVENTS
+========================================= */
+
+.organizer-no-events {
+    padding: 75px 30px;
+
+    text-align: center;
+
+    border:
+        1px dashed #dcd8f7;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #f5fbff
+        );
+}
+
+
+.organizer-no-events-icon {
+    margin-bottom: 18px;
+
+    font-size: 55px;
+}
+
+
+.organizer-no-events h2 {
+    margin: 0 0 10px;
+
+    font-size: 25px;
+}
+
+
+.organizer-no-events p {
+    max-width: 500px;
+
+    margin:
+        0 auto
+        25px;
+
+    color: #7a818d;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.organizer-no-events-btn {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.organizer-dashboard-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.organizer-dashboard-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #eeeeee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        organizerDashboardSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes organizerDashboardSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.organizer-dashboard-loading h2 {
+    margin: 0 0 8px;
+}
+
+
+.organizer-dashboard-loading p {
+    margin: 0;
+
+    color: #7a818d;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .organizer-dashboard-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .organizer-events-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .organizer-dashboard-actions {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .organizer-dashboard-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .organizer-dashboard-header {
+        padding:
+            35px 25px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .organizer-dashboard-header h1 {
+        font-size: 35px;
+    }
+
+
+    .organizer-dashboard-create-btn {
+        width: 100%;
+    }
+
+
+    .organizer-dashboard-stats {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+
+    .organizer-dashboard-actions {
+        padding: 22px;
+    }
+
+
+    .organizer-dashboard-action-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .dashboard-action-btn {
+        justify-content: center;
+    }
+
+
+    .organizer-events-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .organizer-event-banner {
+        height: 170px;
+    }
+
+
+    .organizer-event-content {
+        padding: 20px;
+    }
+
+
+    .organizer-event-primary-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .organizer-event-secondary-actions {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,775 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.qr-scanner-page {
+    width: 88%;
+    max-width: 1100px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+
+    color: #252b38;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.qr-scanner-hero {
+    min-height: 210px;
+
+    margin-bottom: 45px;
+
+    padding: 45px 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 206, 201, 0.4),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #4b36c7,
+            #6c5ce7 50%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+.qr-scanner-hero::after {
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+
+    right: -90px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.qr-scanner-hero > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.qr-scanner-label {
+    display: inline-block;
+
+    margin: 0 0 12px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+.qr-scanner-hero h1 {
+    margin: 0 0 12px;
+
+    font-size:
+        clamp(38px, 5vw, 52px);
+
+    letter-spacing: -1.5px;
+}
+
+
+.qr-scanner-description {
+    max-width: 550px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.qr-scanner-hero-icon {
+    margin-right: 7%;
+
+    font-size: 80px;
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.18)
+        );
+}
+
+
+/* =========================================
+   SCANNER LIVE
+========================================= */
+
+.qr-scanner-live {
+    width: fit-content;
+
+    margin-top: 20px;
+
+    padding: 8px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.qr-live-dot {
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #55efc4;
+
+    animation:
+        qrPulse
+        1.8s
+        infinite;
+}
+
+
+@keyframes qrPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(85, 239, 196, 0.6);
+
+    }
+
+
+    70% {
+
+        box-shadow:
+            0 0 0 8px
+            rgba(85, 239, 196, 0);
+
+    }
+
+
+    100% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(85, 239, 196, 0);
+
+    }
+
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.qr-scanner-header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+.qr-scanner-header > p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.qr-scanner-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 29px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.qr-scanner-header > span {
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.qr-scanner-container {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CAMERA CARD
+========================================= */
+
+.qr-camera-card {
+    padding: 30px;
+
+    border:
+        1px solid #e7e7ef;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+.qr-camera-title {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.qr-camera-title > div {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #ede9ff;
+
+    font-size: 20px;
+}
+
+
+.qr-camera-title span {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.qr-camera-title strong {
+    font-size: 14px;
+}
+
+
+.qr-camera-title small {
+    color: #949aa4;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   QR READER
+========================================= */
+
+.qr-reader-wrapper {
+    padding: 10px;
+
+    overflow: hidden;
+
+    border:
+        2px solid #eeeafc;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #f6fbff
+        );
+}
+
+
+#reader {
+    width: 100%;
+
+    border: none !important;
+}
+
+
+#reader video {
+    width: 100% !important;
+
+    border-radius: 10px;
+}
+
+
+#reader img {
+    max-width: 100%;
+}
+
+
+#reader button {
+    padding: 9px 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+}
+
+
+#reader select {
+    padding: 8px;
+
+    border:
+        1px solid #dedee8;
+
+    border-radius: 7px;
+
+    outline: none;
+}
+
+
+/* =========================================
+   SCANNER TIP
+========================================= */
+
+.qr-scanner-tip {
+    margin-top: 20px;
+
+    padding: 13px 15px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    border-radius: 10px;
+
+    background: #f7f5ff;
+}
+
+
+.qr-scanner-tip p {
+    margin: 0;
+
+    color: #767d88;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESULT CARD
+========================================= */
+
+.qr-result-card {
+    padding: 45px 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background: white;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.qr-success-card {
+    border:
+        1px solid #c9f5e8;
+}
+
+
+.qr-error-card {
+    border:
+        1px solid #ffd3d3;
+}
+
+
+.qr-result-icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        0 auto
+        18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 800;
+}
+
+
+.qr-success-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #00b894,
+            #00cec9
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 184, 148, 0.25);
+}
+
+
+.qr-error-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #d63031,
+            #ff7675
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(214, 48, 49, 0.2);
+}
+
+
+.qr-result-label {
+    margin: 0 0 7px;
+
+    color: #00a884;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.qr-error-label {
+    margin: 0 0 7px;
+
+    color: #d63031;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.qr-result-card h2 {
+    margin: 0 0 10px;
+
+    font-size: 25px;
+}
+
+
+.qr-result-description {
+    max-width: 430px;
+
+    margin:
+        0 auto
+        25px;
+
+    color: #8c929c;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TICKET DETAILS
+========================================= */
+
+.qr-ticket-details {
+    margin: 25px 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e8e8ef;
+
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+
+.qr-ticket-row {
+    padding: 14px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid #eeeeF3;
+}
+
+
+.qr-ticket-row:last-child {
+    border-bottom: none;
+}
+
+
+.qr-ticket-row span {
+    color: #8d939d;
+
+    font-size: 9px;
+}
+
+
+.qr-ticket-row strong {
+    max-width: 65%;
+
+    overflow-wrap: anywhere;
+
+    color: #343b47;
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+.qr-checked-badge {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    color: #00876a !important;
+
+    background: #dcfff4;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.qr-scan-another-button,
+.qr-retry-button {
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.qr-scan-another-button {
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.qr-retry-button {
+    background:
+        linear-gradient(
+            135deg,
+            #d63031,
+            #ff7675
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(214, 48, 49, 0.18);
+}
+
+
+.qr-scan-another-button:hover,
+.qr-retry-button:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .qr-scanner-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .qr-scanner-hero {
+        min-height: auto;
+
+        padding: 35px 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .qr-scanner-hero-icon {
+        display: none;
+    }
+
+
+    .qr-scanner-hero h1 {
+        font-size: 36px;
+    }
+
+
+    .qr-camera-card {
+        padding: 18px;
+    }
+
+
+    .qr-result-card {
+        padding: 35px 20px;
+    }
+
+
+    .qr-ticket-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .qr-ticket-row strong {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+
+    .qr-scan-another-button,
+    .qr-retry-button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,134 @@
+.membership-history-page {
+    width: 92%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.membership-history-header {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.membership-history-header span {
+    color: #6c5ce7;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.membership-history-header h1 {
+    margin: 10px 0;
+    color: #18212f;
+    font-size: 36px;
+}
+
+.membership-history-header p {
+    color: #6c7280;
+}
+
+.membership-history-table-container {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.membership-history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.membership-history-table th,
+.membership-history-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.membership-history-table th {
+    background: #f8f8fc;
+    color: #444;
+    font-size: 13px;
+}
+
+.membership-history-table td {
+    color: #555;
+    font-size: 14px;
+}
+
+.membership-payment-status {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.membership-payment-status.paid {
+    background: #e8fff3;
+    color: #168a50;
+}
+
+.membership-payment-status.created {
+    background: #fff7df;
+    color: #a56b00;
+}
+
+.membership-payment-status.failed {
+    background: #ffeaea;
+    color: #c0392b;
+}
+
+.membership-history-empty {
+    padding: 60px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    background: white;
+    text-align: center;
+}
+
+.membership-history-empty h2 {
+    color: #18212f;
+}
+
+.membership-history-empty p {
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.membership-history-empty button,
+.membership-history-actions button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #6c5ce7;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.membership-history-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.membership-history-loading {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 18px;
+}
+
+@media (max-width: 700px) {
+
+    .membership-history-header h1 {
+        font-size: 29px;
+    }
+
+    .membership-history-actions {
+        flex-direction: column;
+    }
+
+}

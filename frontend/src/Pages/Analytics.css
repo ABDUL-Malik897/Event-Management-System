@@ -1,0 +1,1160 @@
+/* =========================================
+   ANALYTICS PAGE
+========================================= */
+
+.analytics-page {
+    width: 88%;
+    max-width: 1400px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+
+    color: #252b38;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.analytics-hero {
+    min-height: 230px;
+
+    margin-bottom: 55px;
+    padding: 50px 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 27px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 206, 201, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 65% 100%,
+            rgba(253, 121, 168, 0.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #4b36c7,
+            #6c5ce7 50%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.analytics-hero::after {
+    content: "";
+
+    width: 320px;
+    height: 320px;
+
+    position: absolute;
+
+    right: -100px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.analytics-hero > div {
+    position: relative;
+    z-index: 2;
+}
+
+
+.analytics-label {
+    display: inline-block;
+
+    margin: 0 0 12px;
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+.analytics-hero h1 {
+    margin: 0 0 12px;
+
+    font-size:
+        clamp(38px, 5vw, 55px);
+
+    letter-spacing: -2px;
+}
+
+
+.analytics-hero-description {
+    max-width: 580px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.analytics-hero-icon {
+    margin-right: 7%;
+
+    font-size: 85px;
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.18)
+        );
+}
+
+
+/* =========================================
+   COMMON SECTION
+========================================= */
+
+.analytics-section {
+    margin-bottom: 65px;
+}
+
+
+.analytics-section-header {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+
+.analytics-section-label {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.analytics-section-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 29px;
+
+    letter-spacing: -0.8px;
+}
+
+
+.analytics-section-header span {
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.analytics-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.analytics-summary-card {
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.analytics-summary-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(108, 92, 231, 0.12);
+}
+
+
+.analytics-card-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+
+.analytics-icon-events {
+    background: #ede9ff;
+}
+
+
+.analytics-icon-revenue {
+    color: #00876a;
+
+    background: #dcfff4;
+}
+
+
+.analytics-icon-tickets {
+    background: #e2f7ff;
+}
+
+
+.analytics-icon-average {
+    background: #fff0dc;
+}
+
+
+.analytics-summary-card p {
+    margin: 0 0 5px;
+
+    color: #8c939e;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.analytics-summary-card h3 {
+    margin: 0;
+
+    color: #252c38;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   EARNINGS
+========================================= */
+
+.analytics-earnings-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.analytics-earning-card {
+    padding: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 20px;
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+.platform-earning-card {
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #8e7df2
+        );
+}
+
+
+.organizer-earning-card {
+    background:
+        linear-gradient(
+            135deg,
+            #00a884,
+            #00cec9
+        );
+}
+
+
+.analytics-earning-card p {
+    margin: 0 0 7px;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 11px;
+}
+
+
+.analytics-earning-card h2 {
+    margin: 0;
+
+    font-size: 30px;
+}
+
+
+.analytics-earning-card > span {
+    font-size: 42px;
+}
+
+
+/* =========================================
+   BEST EVENT
+========================================= */
+
+.analytics-best-event {
+    margin-bottom: 65px;
+    padding: 35px;
+
+    border:
+        1px solid #ffe6a7;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #fff5d9
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 193, 7, 0.08);
+}
+
+
+.analytics-best-event-badge {
+    display: inline-block;
+
+    margin-bottom: 22px;
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    color: #9b6d00;
+
+    background: #ffe6a7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+
+.analytics-best-event-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.analytics-best-event-content p {
+    margin: 0 0 5px;
+
+    color: #a1833a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.analytics-best-event-content h2 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+
+.analytics-best-event-stats {
+    display: flex;
+
+    gap: 40px;
+}
+
+
+.analytics-best-event-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.analytics-best-event-stats span {
+    color: #a1833a;
+
+    font-size: 9px;
+}
+
+
+.analytics-best-event-stats strong {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MONTHLY REVENUE
+========================================= */
+
+.analytics-monthly-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 15px;
+}
+
+
+.analytics-month-card {
+    padding: 22px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #f6fbff
+        );
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.analytics-month-card:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+.analytics-month-card p {
+    margin: 0 0 7px;
+
+    color: #8a919d;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+.analytics-month-card h3 {
+    margin: 0;
+
+    color: #6c5ce7;
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   TOP EVENTS
+========================================= */
+
+.analytics-top-events {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.analytics-top-event-card {
+    padding: 20px 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 14px;
+
+    background: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.analytics-top-event-card:hover {
+    transform:
+        translateX(4px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(108, 92, 231, 0.08);
+}
+
+
+.analytics-event-rank {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.analytics-top-event-info {
+    flex: 1;
+}
+
+
+.analytics-top-event-info h3 {
+    margin: 0 0 4px;
+
+    font-size: 15px;
+}
+
+
+.analytics-top-event-info p {
+    margin: 0;
+
+    color: #999fa9;
+
+    font-size: 9px;
+}
+
+
+.analytics-top-event-stats {
+    display: flex;
+
+    gap: 40px;
+}
+
+
+.analytics-top-event-stats div {
+    min-width: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.analytics-top-event-stats span {
+    color: #999fa9;
+
+    font-size: 9px;
+}
+
+
+.analytics-top-event-stats strong {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   CHARTS
+========================================= */
+
+.analytics-charts-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.analytics-chart-card {
+    padding: 25px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.analytics-chart-header {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.analytics-chart-header p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.analytics-chart-header h3 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+
+.analytics-chart-header > span {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f1efff;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+.analytics-chart {
+    width: 100%;
+    height: 320px;
+}
+
+
+/* =========================================
+   EVENT DETAILS
+========================================= */
+
+.analytics-event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.analytics-event-card {
+    padding: 25px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.analytics-event-card-header {
+    margin-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.analytics-event-card-header p {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.analytics-event-card-header h3 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+.analytics-event-card-header > span {
+    font-size: 25px;
+}
+
+
+.analytics-event-card-stats {
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f7ff,
+            #f5faff
+        );
+}
+
+
+.analytics-event-card-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.analytics-event-card-stats span {
+    color: #989ea8;
+
+    font-size: 8px;
+}
+
+
+.analytics-event-card-stats strong {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   OCCUPANCY
+========================================= */
+
+.analytics-occupancy {
+    margin-top: 20px;
+}
+
+
+.analytics-occupancy > div:first-child {
+    margin-bottom: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+.analytics-occupancy span {
+    color: #818894;
+
+    font-size: 9px;
+}
+
+
+.analytics-occupancy strong {
+    color: #6c5ce7;
+
+    font-size: 10px;
+}
+
+
+.analytics-progress {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #eeeeF5;
+}
+
+
+.analytics-progress-bar {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    transition:
+        width 0.5s ease;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.analytics-empty {
+    padding: 50px 25px;
+
+    text-align: center;
+
+    border:
+        1px dashed #dcd8f7;
+
+    border-radius: 16px;
+
+    background: #faf9ff;
+}
+
+
+.analytics-empty > div {
+    margin-bottom: 12px;
+
+    font-size: 40px;
+}
+
+
+.analytics-empty h3 {
+    margin: 0 0 7px;
+}
+
+
+.analytics-empty p {
+    margin: 0;
+
+    color: #8c929d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.analytics-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.analytics-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #eeeeee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        analyticsSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes analyticsSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.analytics-loading h2 {
+    margin: 0 0 8px;
+}
+
+
+.analytics-loading p {
+    margin: 0;
+
+    color: #8a919d;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .analytics-summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .analytics-charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .analytics-event-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .analytics-hero {
+        padding: 40px 30px;
+    }
+
+
+    .analytics-hero-icon {
+        display: none;
+    }
+
+
+    .analytics-earnings-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .analytics-best-event-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .analytics-top-event-card {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .analytics-top-event-stats {
+        width: 100%;
+
+        margin-left: 62px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .analytics-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .analytics-hero {
+        min-height: auto;
+
+        padding: 35px 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .analytics-hero h1 {
+        font-size: 37px;
+    }
+
+
+    .analytics-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .analytics-earning-card {
+        padding: 25px;
+    }
+
+
+    .analytics-best-event {
+        padding: 25px;
+    }
+
+
+    .analytics-best-event-stats {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 15px;
+    }
+
+
+    .analytics-top-event-stats {
+        margin-left: 0;
+
+        gap: 15px;
+
+        justify-content: space-between;
+    }
+
+
+    .analytics-top-event-stats div {
+        min-width: auto;
+    }
+
+
+    .analytics-chart {
+        height: 260px;
+    }
+
+
+    .analytics-event-card-stats {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+}

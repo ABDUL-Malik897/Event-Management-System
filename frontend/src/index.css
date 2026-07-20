@@ -1,0 +1,17 @@
+:root {
+    --primary: #6c5ce7;
+    --primary-dark: #5541d7;
+    --secondary: #0984e3;
+    --accent: #fd79a8;
+
+    --purple-light: #f1efff;
+    --blue-light: #edf7ff;
+    --pink-light: #fff0f5;
+
+    --text-dark: #202124;
+    --text-gray: #636e72;
+}
+
+a{
+    text-decoration: none;
+}

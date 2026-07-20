@@ -1,0 +1,320 @@
+/* =========================================
+   NOT FOUND PAGE
+========================================= */
+
+.not-found-page {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(108, 92, 231, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(232, 67, 147, 0.1),
+            transparent 35%
+        ),
+        #f8f9fc;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.not-found-content {
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 50px 40px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   404 CODE
+========================================= */
+
+.not-found-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 110px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #6c5ce7;
+}
+
+
+.not-found-zero {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #e84393
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(108, 92, 231, 0.25);
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.not-found-badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(108, 92, 231, 0.1);
+
+    color: #6c5ce7;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.not-found-content h1 {
+    margin: 0 0 15px;
+
+    color: #1f2937;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.not-found-content > p {
+    max-width: 520px;
+
+    margin: 0 auto 30px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.not-found-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+}
+
+
+.not-found-primary-btn,
+.not-found-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.not-found-primary-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(108, 92, 231, 0.25);
+}
+
+
+.not-found-secondary-btn {
+    color: #6c5ce7;
+
+    background: white;
+
+    border:
+        1px solid
+        #dfe3ea;
+}
+
+
+.not-found-primary-btn:hover,
+.not-found-secondary-btn:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+.not-found-primary-btn:hover {
+    box-shadow:
+        0 12px 25px
+        rgba(108, 92, 231, 0.35);
+}
+
+
+.not-found-secondary-btn:hover {
+    background: #f8f7ff;
+}
+
+
+/* =========================================
+   INFO BOX
+========================================= */
+
+.not-found-info {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    background: #f8f9fc;
+
+    text-align: left;
+}
+
+
+.not-found-info > span {
+    font-size: 22px;
+}
+
+
+.not-found-info p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (
+    max-width: 600px
+) {
+
+    .not-found-page {
+        padding: 30px 15px;
+    }
+
+
+    .not-found-content {
+        padding: 40px 20px;
+    }
+
+
+    .not-found-code {
+        font-size: 75px;
+    }
+
+
+    .not-found-zero {
+        width: 70px;
+        height: 70px;
+
+        font-size: 35px;
+    }
+
+
+    .not-found-content h1 {
+        font-size: 26px;
+    }
+
+
+    .not-found-actions {
+        flex-direction: column;
+    }
+
+
+    .not-found-primary-btn,
+    .not-found-secondary-btn {
+        width: 100%;
+    }
+
+}

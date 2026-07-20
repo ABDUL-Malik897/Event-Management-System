@@ -1,0 +1,977 @@
+/* =========================================
+   APPLICATION STATUS PAGE
+========================================= */
+
+.application-status-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding-bottom: 100px;
+
+    color: #18212f;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f7ff 0%,
+            #ffffff 55%
+        );
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.application-status-hero {
+    width: 92%;
+    max-width: 1400px;
+
+    min-height: 300px;
+
+    margin: 35px auto 70px;
+    padding: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 206, 201, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 65% 100%,
+            rgba(253, 121, 168, 0.3),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #7158e2 45%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(108, 92, 231, 0.22);
+}
+
+
+.application-status-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -80px;
+    top: -110px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.application-status-hero-content {
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.application-status-hero-label {
+    display: inline-block;
+
+    margin: 0 0 18px;
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+.application-status-hero h1 {
+    margin: 0 0 18px;
+
+    font-size:
+        clamp(42px, 5vw, 60px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.application-status-hero-content > p:last-child {
+    max-width: 600px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.application-status-hero-icon {
+    position: relative;
+
+    z-index: 2;
+
+    margin-right: 8%;
+
+    font-size: 95px;
+
+    transform: rotate(5deg);
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.application-status-main {
+    width: 88%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   STATUS BANNER
+========================================= */
+
+.application-status-banner {
+    padding: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    position: relative;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* PENDING */
+
+.application-status-pending {
+    border: 1px solid #ffe69c;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9e8,
+            #fffdf5
+        );
+}
+
+
+/* APPROVED */
+
+.application-status-approved {
+    border: 1px solid #b8f3df;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edfff8,
+            #f5fffc
+        );
+}
+
+
+/* REJECTED */
+
+.application-status-rejected {
+    border: 1px solid #ffd0d5;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f2,
+            #fff8f8
+        );
+}
+
+
+/* =========================================
+   STATUS ICON
+========================================= */
+
+.application-status-banner-icon {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.application-status-pending
+.application-status-banner-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #fdcb6e,
+            #e17055
+        );
+}
+
+
+.application-status-approved
+.application-status-banner-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #00b894,
+            #00cec9
+        );
+}
+
+
+.application-status-rejected
+.application-status-banner-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #e17055,
+            #d63031
+        );
+}
+
+
+/* =========================================
+   STATUS CONTENT
+========================================= */
+
+.application-status-banner-content {
+    flex: 1;
+}
+
+
+.application-status-banner-content > p {
+    margin: 0 0 5px;
+
+    color: #7a818d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.application-status-banner-content h2 {
+    margin: 0 0 7px;
+
+    color: #252c38;
+
+    font-size: 23px;
+}
+
+
+.application-status-banner-content span {
+    display: block;
+
+    max-width: 650px;
+
+    color: #687080;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
+.application-status-badge {
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.application-status-pending
+.application-status-badge {
+    color: #856404;
+
+    background: #fff0b5;
+}
+
+
+.application-status-approved
+.application-status-badge {
+    color: #08775f;
+
+    background: #caffed;
+}
+
+
+.application-status-rejected
+.application-status-badge {
+    color: #b02a37;
+
+    background: #ffdce0;
+}
+
+
+/* =========================================
+   APPLICATION DETAILS CARD
+========================================= */
+
+.application-details-card {
+    padding: 32px;
+
+    border: 1px solid #e8e8f0;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+   DETAILS HEADER
+========================================= */
+
+.application-details-header {
+    padding-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.application-details-label {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.application-details-header h2 {
+    margin: 0;
+
+    color: #18212f;
+
+    font-size: 26px;
+}
+
+
+.application-details-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0edff,
+            #e9f8ff
+        );
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   DETAILS GRID
+========================================= */
+
+.application-details-grid {
+    padding: 28px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.application-detail-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.application-detail-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1eeff,
+            #edf8ff
+        );
+
+    font-size: 18px;
+}
+
+
+.application-detail-item > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.application-detail-item span {
+    color: #9298a3;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.application-detail-item strong {
+    color: #343b47;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FULL DETAILS
+========================================= */
+
+.application-full-detail {
+    padding: 18px 0;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.application-full-detail span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6c5ce7;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.application-full-detail p {
+    margin: 0;
+
+    color: #555d69;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   ADMIN REMARK
+========================================= */
+
+.application-admin-card {
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    border-radius: 18px;
+}
+
+
+.application-admin-pending {
+    border: 1px solid #e4dcff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f2ff,
+            #f5faff
+        );
+}
+
+
+.application-admin-approved {
+    border: 1px solid #c5f4e4;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effff9,
+            #f5fffc
+        );
+}
+
+
+.application-admin-rejected {
+    border: 1px solid #ffd5da;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff2f4,
+            #fff9f9
+        );
+}
+
+
+.application-admin-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.application-admin-label {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.application-admin-card h3 {
+    margin: 0 0 8px;
+
+    color: #303744;
+
+    font-size: 17px;
+}
+
+
+.application-admin-message {
+    margin: 0;
+
+    color: #687080;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   REVIEW / APPROVED INFO
+========================================= */
+
+.application-review-info,
+.application-approved-info {
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    border-radius: 18px;
+}
+
+
+.application-review-info {
+    border: 1px solid #ffe69c;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9e5,
+            #fffdf5
+        );
+}
+
+
+.application-approved-info {
+    border: 1px solid #bcefdc;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfff8,
+            #f5fffc
+        );
+}
+
+
+.application-review-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    font-size: 22px;
+}
+
+
+.application-review-info h3,
+.application-approved-info h3 {
+    margin: 0 0 6px;
+
+    color: #303744;
+
+    font-size: 17px;
+}
+
+
+.application-review-info p,
+.application-approved-info p {
+    margin: 0;
+
+    color: #687080;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   EMPTY APPLICATION
+========================================= */
+
+.application-empty-section {
+    width: 88%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+.application-empty-card {
+    padding: 80px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0, 206, 201, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f3efff,
+            #edf8ff
+        );
+}
+
+
+.application-empty-icon {
+    margin-bottom: 20px;
+
+    font-size: 70px;
+}
+
+
+.application-empty-card h2 {
+    margin: 0 0 12px;
+
+    color: #18212f;
+
+    font-size: 30px;
+}
+
+
+.application-empty-card p {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: #687080;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.application-status-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+.application-status-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    border: 5px solid #eeeeee;
+
+    border-top-color: #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        applicationLoaderSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes applicationLoaderSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.application-status-loading h2 {
+    margin: 0 0 10px;
+
+    color: #18212f;
+}
+
+
+.application-status-loading p {
+    margin: 0;
+
+    color: #687080;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .application-status-page {
+        padding-bottom: 60px;
+    }
+
+
+    .application-status-hero {
+        width: 94%;
+
+        min-height: auto;
+
+        margin: 15px auto 55px;
+
+        padding: 45px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .application-status-hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .application-status-hero-icon {
+        display: none;
+    }
+
+
+    .application-status-main {
+        width: 92%;
+    }
+
+
+    .application-status-banner {
+        padding: 22px;
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .application-status-badge {
+        margin-left: 80px;
+    }
+
+
+    .application-details-card {
+        padding: 24px 20px;
+    }
+
+
+    .application-details-header h2 {
+        font-size: 22px;
+    }
+
+
+    .application-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .application-admin-card,
+    .application-review-info,
+    .application-approved-info {
+        align-items: flex-start;
+    }
+
+}

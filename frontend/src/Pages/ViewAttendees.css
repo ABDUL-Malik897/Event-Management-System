@@ -1,0 +1,845 @@
+/* =========================================
+   ATTENDEES PAGE
+========================================= */
+
+.attendees-page {
+    width: 88%;
+    max-width: 1300px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+
+    color: #252b38;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.attendees-hero {
+    min-height: 220px;
+
+    margin-bottom: 35px;
+    padding: 45px 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 206, 201, 0.4),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 60% 100%,
+            rgba(253, 121, 168, 0.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #4b36c7,
+            #6c5ce7 50%,
+            #0984e3
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+.attendees-hero::after {
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+
+    right: -100px;
+    top: -160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.attendees-hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.attendees-label {
+    display: inline-block;
+
+    margin: 0 0 12px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+.attendees-hero h1 {
+    margin: 0 0 12px;
+
+    font-size:
+        clamp(38px, 5vw, 52px);
+
+    letter-spacing: -1.5px;
+}
+
+
+.attendees-hero-description {
+    max-width: 580px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.attendees-hero-icon {
+    position: relative;
+
+    z-index: 2;
+
+    margin-right: 7%;
+
+    font-size: 80px;
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.18)
+        );
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.attendees-summary {
+    margin-bottom: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.attendees-summary-card {
+    padding: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 16px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.attendees-summary-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(108, 92, 231, 0.12);
+}
+
+
+.attendees-summary-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    font-size: 19px;
+}
+
+
+.attendees-booking-icon {
+    background:
+        #ede9ff;
+}
+
+
+.attendees-ticket-icon {
+    background:
+        #e2f7ff;
+}
+
+
+.attendees-user-icon {
+    background:
+        #ddfff4;
+}
+
+
+.attendees-summary-card p {
+    margin: 0 0 4px;
+
+    color: #9096a0;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.attendees-summary-card h2 {
+    margin: 0;
+
+    color: #252c38;
+
+    font-size: 27px;
+}
+
+
+/* =========================================
+   ATTENDEE SECTION
+========================================= */
+
+.attendees-section {
+    width: 100%;
+}
+
+
+.attendees-section-header {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.attendees-section-label {
+    margin: 0 0 5px;
+
+    color: #6c5ce7;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.attendees-section-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 29px;
+
+    letter-spacing: -0.8px;
+}
+
+
+.attendees-section-header > div:first-child > span {
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.attendees-search {
+    width: 280px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border:
+        1px solid #dedee8;
+
+    border-radius: 10px;
+
+    background: white;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.attendees-search:focus-within {
+    border-color:
+        #6c5ce7;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(108, 92, 231, 0.08);
+}
+
+
+.attendees-search span {
+    font-size: 13px;
+}
+
+
+.attendees-search input {
+    width: 100%;
+
+    padding: 12px 0;
+
+    border: none;
+
+    outline: none;
+
+    color: #343b47;
+
+    background: transparent;
+
+    font-size: 11px;
+}
+
+
+.attendees-search input::placeholder {
+    color: #a1a6af;
+}
+
+
+/* =========================================
+   ATTENDEE LIST
+========================================= */
+
+.attendees-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+.attendee-card {
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    border:
+        1px solid #e9e9f0;
+
+    border-radius: 14px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.attendee-card:hover {
+    transform:
+        translateX(4px);
+
+    border-color:
+        #d9d5ff;
+
+    box-shadow:
+        0 9px 25px
+        rgba(108, 92, 231, 0.09);
+}
+
+
+/* =========================================
+   ATTENDEE NUMBER
+========================================= */
+
+.attendee-number {
+    width: 25px;
+
+    color: #a1a6af;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.attendee-avatar {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 15px
+        rgba(108, 92, 231, 0.2);
+}
+
+
+/* =========================================
+   USER INFORMATION
+========================================= */
+
+.attendee-user-info {
+    flex: 1;
+}
+
+
+.attendee-user-info h3 {
+    margin: 0 0 4px;
+
+    color: #2b323e;
+
+    font-size: 14px;
+}
+
+
+.attendee-user-info p {
+    margin: 0;
+
+    color: #9298a2;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   TICKET INFORMATION
+========================================= */
+
+.attendee-ticket-info {
+    min-width: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.attendee-ticket-info span {
+    color: #999fa8;
+
+    font-size: 9px;
+}
+
+
+.attendee-ticket-info strong {
+    color: #343b47;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.attendee-status span {
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    color: #00876a;
+
+    background: #dcfff4;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.attendees-empty {
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border:
+        1px dashed #dcd8f7;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #f5fbff
+        );
+}
+
+
+.attendees-empty-icon {
+    margin-bottom: 15px;
+
+    font-size: 50px;
+}
+
+
+.attendees-empty h2 {
+    margin: 0 0 8px;
+
+    font-size: 23px;
+}
+
+
+.attendees-empty p {
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    color: #8b919b;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.attendees-loading {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.attendees-loader {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #eeeeee;
+
+    border-top-color:
+        #6c5ce7;
+
+    border-radius: 50%;
+
+    animation:
+        attendeesSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes attendeesSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.attendees-loading h2 {
+    margin: 0 0 7px;
+}
+
+
+.attendees-loading p {
+    margin: 0;
+
+    color: #8a919d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.attendees-error {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.attendees-error-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: #d63031;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.attendees-error h2 {
+    margin: 0 0 8px;
+}
+
+
+.attendees-error p {
+    margin: 0 0 20px;
+
+    color: #8a919d;
+
+    font-size: 12px;
+}
+
+
+.attendees-error button {
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #0984e3
+        );
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .attendees-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .attendees-section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .attendees-search {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .attendees-page {
+        width: 92%;
+
+        padding:
+            20px 0
+            60px;
+    }
+
+
+    .attendees-hero {
+        min-height: auto;
+
+        padding: 35px 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .attendees-hero h1 {
+        font-size: 36px;
+    }
+
+
+    .attendees-hero-icon {
+        display: none;
+    }
+
+
+    .attendees-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .attendee-card {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .attendee-number {
+        display: none;
+    }
+
+
+    .attendee-user-info {
+        min-width:
+            calc(100% - 70px);
+    }
+
+
+    .attendee-ticket-info {
+        margin-left: 62px;
+    }
+
+
+    .attendee-status {
+        margin-left: auto;
+    }
+
+}

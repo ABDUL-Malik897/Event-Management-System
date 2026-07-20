@@ -1,0 +1,488 @@
+.admin-dashboard {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 45px 0 80px;
+    color: #1f2937;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.admin-dashboard-header {
+    padding: 35px;
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4338ca,
+            #7c3aed,
+            #2563eb
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(79, 70, 229, 0.2);
+}
+
+
+.admin-dashboard-header span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ddd6fe;
+}
+
+
+.admin-dashboard-header h1 {
+    margin: 8px 0;
+    font-size: 40px;
+}
+
+
+.admin-dashboard-header p {
+    margin: 0;
+    color: rgba(255,255,255,0.8);
+}
+
+
+.admin-dashboard-request-btn {
+    padding: 13px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 10px;
+
+    background: white;
+    color: #4f46e5;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.admin-dashboard-request-btn strong {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+    color: white;
+
+    font-size: 11px;
+}
+
+
+/* ==========================
+   STATS
+========================== */
+
+.admin-dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.admin-stat-card {
+    padding: 25px;
+
+    border-radius: 17px;
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 25px
+        rgba(31,41,55,0.06);
+
+    transition: 0.25s;
+}
+
+
+.admin-stat-card:hover {
+    transform: translateY(-4px);
+}
+
+
+.admin-stat-card div {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+
+.admin-stat-card span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+.admin-stat-card h2 {
+    margin: 5px 0 0;
+    font-size: 32px;
+}
+
+
+.admin-stat-card.users {
+    border-top: 4px solid #6366f1;
+}
+
+
+.admin-stat-card.organizers {
+    border-top: 4px solid #8b5cf6;
+}
+
+
+.admin-stat-card.events {
+    border-top: 4px solid #06b6d4;
+}
+
+
+.admin-stat-card.pending {
+    border-top: 4px solid #f59e0b;
+}
+
+
+/* ==========================
+   CHARTS
+========================== */
+
+.admin-chart-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.admin-chart-card,
+.admin-large-chart-card {
+
+    padding: 25px;
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(31,41,55,0.06);
+}
+
+
+.admin-large-chart-card {
+    margin-bottom: 25px;
+}
+
+
+.admin-chart-heading h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+.admin-chart-heading p {
+    margin: 5px 0 20px;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+.admin-doughnut {
+    height: 300px;
+}
+
+
+.admin-bar-chart,
+.admin-growth-chart {
+    height: 380px;
+}
+
+
+/* ==========================
+   RECENT ACTIVITY
+========================== */
+
+.admin-recent-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.admin-recent-card {
+    padding: 25px;
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(31,41,55,0.06);
+}
+
+
+.admin-recent-heading {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.admin-recent-heading h3 {
+    margin: 0;
+}
+
+
+.admin-recent-heading a {
+    color: #6366f1;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.admin-recent-item {
+    padding: 14px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid #f0f0f3;
+}
+
+
+.admin-recent-item:last-child {
+    border-bottom: none;
+}
+
+
+.admin-recent-item div {
+    display: flex;
+
+    flex-direction:
+        column;
+
+    gap: 4px;
+}
+
+
+.admin-recent-item strong {
+    font-size: 12px;
+}
+
+
+.admin-recent-item span {
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+.admin-status-badge {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-weight: 700;
+}
+
+
+.admin-status-badge.pending {
+    color: #b45309;
+    background: #fef3c7;
+}
+
+
+.admin-status-badge.approved {
+    color: #047857;
+    background: #d1fae5;
+}
+
+
+.admin-status-badge.rejected {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+
+/* ==========================
+   LOADING
+========================== */
+
+.admin-dashboard-loading,
+.admin-dashboard-error {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.admin-dashboard-spinner {
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    border:
+        5px solid #e5e7eb;
+
+    border-top-color:
+        #6366f1;
+
+    border-radius: 50%;
+
+    animation:
+        adminDashboardSpin
+        0.8s linear
+        infinite;
+}
+
+
+@keyframes adminDashboardSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 950px) {
+
+    .admin-dashboard-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .admin-chart-grid,
+    .admin-recent-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .admin-dashboard {
+
+        width: 92%;
+
+    }
+
+
+    .admin-dashboard-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .admin-dashboard-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .admin-dashboard-request-btn {
+
+        width: 100%;
+
+        justify-content:
+            center;
+
+    }
+
+
+    .admin-dashboard-header h1 {
+
+        font-size: 32px;
+
+    }
+
+}

@@ -1,0 +1,806 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* =========================================
+   SIGNUP PAGE
+========================================= */
+
+.signup-page {
+    min-height: calc(100vh - 70px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   LEFT SIDE - SIGNUP FORM
+========================================= */
+
+.signup-form-section {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 60px;
+
+    background:
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(232, 67, 147, 0.08),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(108, 92, 231, 0.06),
+            transparent 30%
+        ),
+        #ffffff;
+}
+
+
+.signup-form-container {
+    width: 100%;
+
+    max-width: 460px;
+}
+
+
+/* =========================================
+   MOBILE LOGO
+========================================= */
+
+.signup-logo-mobile {
+    display: none;
+
+    margin-bottom: 35px;
+
+    color: #6c5ce7;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   FORM HEADING
+========================================= */
+
+.signup-heading {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+.signup-small-title {
+    margin: 0 0 10px;
+
+    color: #e84393;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.signup-heading h1 {
+    margin: 0 0 12px;
+
+    color: #18212f;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+}
+
+
+.signup-heading > p:last-child {
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    color: #6c7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SIGNUP FORM
+========================================= */
+
+.signup-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.signup-input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.signup-input-group label {
+    color: #333746;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.signup-input-group input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dfe2e8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafbff;
+
+    color: #222;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.signup-input-group input::placeholder {
+    color: #a0a4ad;
+}
+
+
+.signup-input-group input:hover {
+    border-color: #c7c9d1;
+}
+
+
+.signup-input-group input:focus {
+    border-color: #e84393;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(232, 67, 147, 0.1);
+}
+
+
+/* =========================================
+   SIGNUP BUTTON
+========================================= */
+
+.signup-submit-btn {
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e84393 0%,
+            #a55eea 50%,
+            #6c5ce7 100%
+        );
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(232, 67, 147, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.signup-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(108, 92, 231, 0.3);
+}
+
+
+.signup-submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.signup-submit-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.signup-divider {
+    margin: 25px 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+.signup-divider::before,
+.signup-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e5e5e5;
+}
+
+
+.signup-divider span {
+    padding: 0 15px;
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.signup-login-text {
+    margin: 0;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+.signup-login-text a {
+    color: #e84393;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.signup-login-text a:hover {
+    color: #6c5ce7;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BACK TO HOME
+========================================= */
+
+.signup-back-home {
+    display: block;
+
+    margin-top: 22px;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.signup-back-home:hover {
+    color: #e84393;
+}
+
+
+/* =========================================
+   RIGHT SIDE - HERO
+========================================= */
+
+.signup-hero {
+    min-height: calc(100vh - 70px);
+
+    padding: 60px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(253, 203, 110, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(0, 206, 201, 0.3),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e84393 0%,
+            #a55eea 35%,
+            #8854d0 60%,
+            #3867d6 100%
+        );
+}
+
+
+/* DECORATIVE CIRCLE */
+
+.signup-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    right: -120px;
+
+    bottom: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* SECOND DECORATIVE CIRCLE */
+
+.signup-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    left: -80px;
+
+    top: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.signup-hero-content {
+    width: 100%;
+
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   EVENTHUB LOGO
+========================================= */
+
+.signup-logo {
+    display: inline-block;
+
+    margin-bottom: 70px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   HERO TAG
+========================================= */
+
+.signup-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 16px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.signup-hero-text h1 {
+    margin: 0 0 22px;
+
+    max-width: 600px;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            62px
+        );
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.signup-hero-text > p {
+    max-width: 550px;
+
+    margin: 0 0 35px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.87
+        );
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.signup-benefits {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.signup-benefit {
+    max-width: 450px;
+
+    padding: 14px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.signup-benefit:hover {
+    transform: translateX(5px);
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+.signup-benefit > span {
+    min-width: 35px;
+
+    font-size: 26px;
+
+    text-align: center;
+}
+
+
+.signup-benefit h3 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.signup-benefit p {
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .signup-page {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .signup-hero {
+        order: 1;
+
+        min-height: auto;
+
+        padding: 60px 40px;
+    }
+
+
+    .signup-form-section {
+        order: 2;
+
+        min-height: auto;
+
+        padding: 60px 30px;
+    }
+
+
+    .signup-hero-content {
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+
+    .signup-logo {
+        margin-bottom: 45px;
+    }
+
+
+    .signup-hero-text h1 {
+        max-width: 700px;
+
+        font-size: 46px;
+    }
+
+
+    .signup-benefits {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .signup-benefit {
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .signup-hero {
+        padding:
+            45px 22px;
+    }
+
+
+    .signup-logo {
+        margin-bottom:
+            35px;
+
+        font-size:
+            25px;
+    }
+
+
+    .signup-hero-text h1 {
+        font-size:
+            36px;
+
+        letter-spacing:
+            -1px;
+    }
+
+
+    .signup-hero-text > p {
+        font-size:
+            15px;
+    }
+
+
+    .signup-benefits {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .signup-form-section {
+        padding:
+            50px 22px;
+    }
+
+
+    .signup-form-container {
+        max-width:
+            100%;
+    }
+
+
+    .signup-heading h1 {
+        font-size:
+            30px;
+    }
+
+
+    .signup-heading > p:last-child {
+        font-size:
+            13px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .signup-hero-text h1 {
+        font-size:
+            31px;
+    }
+
+
+    .signup-form-section {
+        padding:
+            40px 16px;
+    }
+
+
+    .signup-input-group input {
+        padding:
+            13px 14px;
+    }
+
+}
