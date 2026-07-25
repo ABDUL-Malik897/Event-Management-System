@@ -1,9 +1,6 @@
 import Booking from "../models/Booking.js";
 import Event from "../models/Event.js";
 
-import Booking from "../models/Booking.js";
-import Event from "../models/Event.js";
-
 export const verifyTicket = async (req, res) => {
 
     try {
