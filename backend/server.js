@@ -29,10 +29,46 @@ connectDB();
 // MIDDLEWARE
 // ==========================================
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://event-management-system-six-gamma.vercel.app"
+    
+];
+
 app.use(
     cors({
-        origin: [process.env.FRONTEND_URL,"http://localhost:3000"],
-        credentials: true
+        origin: function (origin, callback) {
+
+            // Allow requests with no origin
+            // Postman, mobile apps, server-to-server, etc.
+            if (!origin) {
+                return callback(null, true);
+            }
+
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+
+            return callback(
+                new Error("Not allowed by CORS")
+            );
+        },
+
+        credentials: true,
+
+        methods: [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE",
+            "OPTIONS"
+        ],
+
+        allowedHeaders: [
+            "Content-Type",
+            "Authorization"
+        ]
     })
 );
 
