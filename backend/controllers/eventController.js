@@ -21,21 +21,79 @@ export const createEvent = async (req ,res) => {
     }
 };
 
-export const getEvents = async (req ,res) => {
+export const getEvents = async (req, res) => {
+
     try {
-        const events = await Event.find().populate("organizer", "username email").sort({ createdAt : -1 })
-        res.status(200).json({
-            success : true,
-            count : events.length,
+
+        // ==========================================
+        // TODAY
+        // ==========================================
+
+        const today = new Date();
+
+        today.setHours(
+            0,
+            0,
+            0,
+            0
+        );
+
+
+        // ==========================================
+        // ONLY CURRENT + FUTURE EVENTS
+        // ==========================================
+
+        const events = await Event.find({
+
+            date: {
+                $gte: today
+            }
+
+        })
+            .populate(
+                "organizer",
+                "username email"
+            )
+            .sort({
+                date: 1
+            });
+
+
+        // ==========================================
+        // RESPONSE
+        // ==========================================
+
+        return res.status(200).json({
+
+            success: true,
+
+            count:
+                events.length,
+
             events
-        })
+
+        });
+
+
     } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            success : false,
-            message : "Server Error"
-        })
+
+        console.log(
+            "Get Events Error:",
+            error
+        );
+
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Server Error"
+
+        });
+
     }
+
 };
 
 export const getEvent = async (req ,res) => {

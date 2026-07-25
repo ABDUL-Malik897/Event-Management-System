@@ -88,14 +88,6 @@ const Signup = () => {
                     phone
                 }
             );
-
-
-            sessionStorage.setItem(
-                "signupEmail",
-                email
-            );
-
-
             toast.success(
                 response.data.message ||
                 "OTP sent successfully"
@@ -103,7 +95,7 @@ const Signup = () => {
 
 
             navigate(
-                "/verify-signup-otp",
+                "/login",
                 {
                     replace: true
                 }
@@ -382,8 +374,7 @@ const Signup = () => {
                                     </h3>
 
                                     <p>
-                                        OTP verification keeps
-                                        your account protected.
+                                        Secure authentication keeps your EventHub account protected.
                                     </p>
                                 </div>
 

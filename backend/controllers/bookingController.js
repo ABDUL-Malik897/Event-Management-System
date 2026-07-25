@@ -24,16 +24,27 @@ export const bookTicket = async (req, res) => {
                 message: "Event not found"
             });
         }
+        const now = new Date();
+        const eventDateTime = new Date(event.date);
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const eventDate = new Date(event.date);
-        eventDate.setHours(0, 0, 0, 0);
-        if (eventDate < today) {
+        if (event.time) {
+            const timeString = event.time.trim();
+            const [hours,minutes] = timeString.split(":").map(Number);
+            if (
+                !Number.isNaN(hours) &&
+                !Number.isNaN(minutes)
+            ) {
+                eventDateTime.setHours(
+                    hours,minutes,0,0
+                );
+            }
+        }
+        if (eventDateTime <= now) {
             await session.abortTransaction();
             return res.status(400).json({
                 success: false,
-                message: "Event has already ended"
+                message:
+                    "This event has already started or ended. Booking is no longer available."
             });
         }
         if (event.availableSeats < quantity) {
@@ -142,25 +153,39 @@ export const bookTicket = async (req, res) => {
 
 export const myBooking = async (req, res) => {
     try {
-        const bookings = await Booking.find({
-            user: req.user._id
+        
+        const bookings = await Booking.find({user: req.user._id})
+            .populate("event","title date time venue banner ticketPrice").sort({    createdAt: -1 })
+        const now = new Date();
+        const activeBookings = bookings.filter((booking) => {
+            if (!booking.event) {
+                return false;
+            }
+            const eventDateTime = new Date(booking.event.date);
+            if (booking.event.time) {
+                const [hours,minutes] = booking.event.time.trim().split(":").map(Number);
+                if (
+                    !Number.isNaN(hours) &&
+                    !Number.isNaN(minutes)
+                ) {
+                    eventDateTime.setHours(
+                        hours,minutes,0,0
+                    );
+                }
+            } else {
+                eventDateTime.setHours(23,59,59,999);
+            }
+            return eventDateTime >= now;
         })
-        .populate(
-            "event",
-            "title date venue banner ticketPrice"
-        )
-        .sort({ createdAt: -1 });
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
-            count: bookings.length,
-            bookings
+            count: activeBookings.length,
+            bookings: activeBookings
         });
-
     } catch (error) {
-        console.log(error);
-
-        res.status(500).json({
+        console.log("My Booking Error:", error);
+        return res.status(500).json({
             success: false,
             message: "Server Error"
         });

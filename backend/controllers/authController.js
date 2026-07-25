@@ -8,90 +8,224 @@ import cloudinary from "../config/cloudinary.js";
 export const signup = async (req, res) => {
 
     try {
-        const { username, email, phone, password, confirmPassword } = req.body;
-        if (!username || !email || !phone || !password || !confirmPassword) {
+
+        const {
+            username,
+            email,
+            phone,
+            password,
+            confirmPassword
+        } = req.body;
+
+
+        // ==========================================
+        // CHECK REQUIRED FIELDS
+        // ==========================================
+
+        if (
+            !username ||
+            !email ||
+            !phone ||
+            !password ||
+            !confirmPassword
+        ) {
+
             return res.status(400).json({
                 success: false,
                 message: "Please fill all fields"
             });
+
         }
 
+
+        // ==========================================
+        // CHECK PASSWORD MATCH
+        // ==========================================
+
         if (password !== confirmPassword) {
+
             return res.status(400).json({
                 success: false,
                 message: "Passwords do not match"
             });
+
         }
 
-        const existingEmail = await User.findOne({email: email.toLowerCase()})
+
+        // ==========================================
+        // PASSWORD LENGTH
+        // ==========================================
+
+        if (password.length < 6) {
+
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Password must be at least 6 characters"
+            });
+
+        }
+
+
+        // ==========================================
+        // NORMALIZE EMAIL
+        // ==========================================
+
+        const normalizedEmail =
+            email.toLowerCase().trim();
+
+
+        // ==========================================
+        // CHECK EMAIL
+        // ==========================================
+
+        const existingEmail =
+            await User.findOne({
+                email: normalizedEmail
+            });
+
+
         if (existingEmail) {
+
             return res.status(400).json({
                 success: false,
-                message: "Email is already registered"
+                message:
+                    "Email is already registered"
             });
+
         }
 
-        const existingPhone = await User.findOne({phone});
+
+        // ==========================================
+        // CHECK PHONE
+        // ==========================================
+
+        const existingPhone =
+            await User.findOne({
+                phone: phone.trim()
+            });
+
+
         if (existingPhone) {
+
             return res.status(400).json({
                 success: false,
-                message: "Phone number is already registered"
+                message:
+                    "Phone number is already registered"
             });
+
         }
 
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password,salt);
-        const otp = Math.floor(100000 + Math.random() * 900000).toString();
-        const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
 
-        const user = await User.create({
-            username,
-            email: email.toLowerCase(),
-            phone,
-            password: hashedPassword,
-            isEmailVerified: false,
-            isPhoneVerified: false,
-            otp,
-            otpExpiry,
-            otpPurpose: "signup",
-            otpLastSentAt : new Date()
-        });
+        // ==========================================
+        // HASH PASSWORD
+        // ==========================================
 
-        try {
-            await sendEmail(
-                email,
-                "Verify Your EventHub Account",
-                `
-                    <h2>EventHub Email Verification</h2>
-                    <p>Your OTP is:</p>
-                    <h1>${otp}</h1>
-                    <p>
-                        This OTP expires in 5 minutes.
-                    </p>
-                `
+        const salt =
+            await bcrypt.genSalt(10);
+
+        const hashedPassword =
+            await bcrypt.hash(
+                password,
+                salt
             );
-        } catch (emailError) {
-            console.log("OTP Email Error:", emailError);
 
-            await User.findByIdAndDelete(user._id);
-            return res.status(500).json({
-                success: false,
-                message: "Unable to send OTP. Please try signing up again."
+
+        // ==========================================
+        // CREATE USER
+        // NO SIGNUP OTP
+        // ==========================================
+
+        const user =
+            await User.create({
+
+                username:
+                    username.trim(),
+
+                email:
+                    normalizedEmail,
+
+                phone:
+                    phone.trim(),
+
+                password:
+                    hashedPassword,
+
+                // Signup no longer requires
+                // email/OTP verification
+
+                isVerified: true,
+
+                isEmailVerified: true,
+
+                // Phone verification is not
+                // being performed during signup
+
+                isPhoneVerified: false,
+
+                otp: null,
+
+                otpExpiry: null,
+
+                otpPurpose: null,
+
+                otpLastSentAt: null
+
             });
-        }
+
+
+        // ==========================================
+        // RESPONSE
+        // ==========================================
 
         return res.status(201).json({
+
             success: true,
-            message: "OTP sent to your email. Please verify your account.",
-            email: user.email
+
+            message:
+                "Account created successfully. Please login.",
+
+            user: {
+
+                _id:
+                    user._id,
+
+                username:
+                    user.username,
+
+                email:
+                    user.email,
+
+                phone:
+                    user.phone,
+
+                role:
+                    user.role
+
+            }
+
         });
+
+
     } catch (error) {
-        console.log("Signup Error:",error);
+
+        console.log(
+            "Signup Error:",
+            error
+        );
+
+
         return res.status(500).json({
+
             success: false,
-            message: "Something went wrong while creating your account"
+
+            message:
+                "Something went wrong while creating your account"
+
         });
+
     }
+
 };
 
 export const login = async (req ,res) => {

@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import NotFound from "./Pages/NotFound";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import VerifySignupOTP from "./Pages/VerifySignupOTP";
+// import VerifySignupOTP from "./Pages/VerifySignupOTP";
 
 import CreateEvent from "./Pages/CreateEvent";
 import AllEvents from "./Pages/AllEvents";
@@ -92,10 +92,10 @@ function App() {
                     }
                 />
 
-                <Route
+                {/* <Route
                     path="/verify-signup-otp"
                     element={<VerifySignupOTP />}
-                />
+                /> */}
 
 
                 <Route

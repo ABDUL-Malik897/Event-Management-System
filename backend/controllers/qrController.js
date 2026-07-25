@@ -1,6 +1,9 @@
 import Booking from "../models/Booking.js";
 import Event from "../models/Event.js";
 
+import Booking from "../models/Booking.js";
+import Event from "../models/Event.js";
+
 export const verifyTicket = async (req, res) => {
 
     try {
@@ -11,53 +14,69 @@ export const verifyTicket = async (req, res) => {
                 message: "Ticket ID is required"
             });
         }
+
         const booking = await Booking.findOne({
             "tickets.ticketId": ticketId,
             bookingStatus: "Booked"
         })
-        .populate("user", "username email")
-        .populate("event", "title date venue");
+            .populate("user","username email")
+            .populate("event","title date time venue organizer");
         if (!booking) {
             return res.status(404).json({
                 success: false,
                 message: "Invalid Ticket"
             });
         }
-        const event = await Event.findById(booking.event._id);
-        if (event.organizer.toString() !== req.user._id.toString()) {
-            return res.status(403).json({
+        if (!booking.event) {
+            return res.status(404).json({
                 success: false,
-                message: "Unauthorized"
+                message: "Event not found"
             });
         }
-        const ticket = booking.tickets.find(
-            (t) => t.ticketId === ticketId
-        );
+        const eventOrganizerId = booking.event.organizer?.toString();
+        const loggedInUserId = req.user._id.toString();
+        if (
+            req.user.role !== "admin" &&
+            eventOrganizerId !== loggedInUserId
+        ) {
+            return res.status(403).json({
+                success: false,
+                message:
+                    "You are not authorized to check in tickets for this event"
+            });
+        }
+        const ticket = booking.tickets.find((ticket) => ticket.ticketId === ticketId);
         if (!ticket) {
             return res.status(404).json({
                 success: false,
-                message: "Ticket Not Found"
+                message: "Ticket not found"
             });
         }
+
         if (ticket.checkedIn) {
             return res.status(400).json({
                 success: false,
-                message: "Ticket Already Checked In",
+                message: "Ticket already checked in",
                 ticket
             });
         }
         ticket.checkedIn = true;
+
         ticket.checkedInAt = new Date();
         await booking.save();
+
         return res.status(200).json({
             success: true,
-            message: "Check-in Successful",
+            message: "Check-in successful",
             booking,
             ticket
         });
     } catch (error) {
-        console.log(error);
-        res.status(500).json({
+        console.log(
+            "Verify Ticket Error:",
+            error
+        );
+        return res.status(500).json({
             success: false,
             message: "Server Error"
         });
