@@ -1,595 +1,219 @@
-import React, {
-    useEffect,
-    useState
-} from "react";
-
-import {
-    useNavigate,
-    Link
-} from "react-router-dom";
-
+import React, {useEffect, useState} from "react";
+import {useNavigate, Link} from "react-router-dom";
 import toast from "react-hot-toast";
-
 import API from "../api/api";
-
-import useAuthContext
-    from "../hooks/useAuthContext";
-
+import useAuthContext from "../hooks/useAuthContext";
 import "./VerifySignupOTP.css";
 
-
 const VerifySignupOTP = () => {
+    
+    const navigate =  useNavigate();
+    const { dispatch } = useAuthContext();
+    const [otp, setOtp] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [ resendLoading, setResendLoading] = useState(false);
+    const [timer, setTimer] = useState(60);
 
-    const navigate =
-        useNavigate();
-
-    const { dispatch } =
-        useAuthContext();
-
-
-    const [otp, setOtp] =
-        useState("");
-
-    const [loading, setLoading] =
-        useState(false);
-
-    const [
-        resendLoading,
-        setResendLoading
-    ] = useState(false);
-
-    const [timer, setTimer] =
-        useState(60);
-
-
-    const email =
-        sessionStorage.getItem(
-            "signupEmail"
-        );
-
-
-    // ============================
-    // COUNTDOWN TIMER
-    // ============================
+    const email = sessionStorage.getItem("signupEmail");
 
     useEffect(() => {
-
         if (timer <= 0) {
             return;
         }
-
-
-        const interval =
-            setInterval(() => {
-
-                setTimer(
-                    (prev) =>
-                        prev - 1
-                );
-
+        const interval = setInterval(() => {
+                setTimer((prev) => prev - 1);
             }, 1000);
 
-
         return () => {
-
-            clearInterval(
-                interval
-            );
-
+            clearInterval(interval);
         };
-
     }, [timer]);
 
-
-    // ============================
-    // VERIFY OTP
-    // ============================
-
-    const handleSubmit =
-        async (e) => {
-
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (loading) {
             return;
         }
-
-
         if (!email) {
-
-            toast.error(
-                "Signup session not found. Please signup again."
-            );
-
-            navigate(
-                "/signup",
-                {
-                    replace: true
-                }
-            );
-
+            toast.error("Signup session not found. Please signup again.");
+            navigate("/signup", { replace: true });
             return;
-
         }
-
-
         if (otp.length !== 6) {
-
-            toast.error(
-                "Please enter a valid 6-digit OTP"
-            );
-
+            toast.error("Please enter a valid 6-digit OTP");
             return;
-
         }
-
-
         try {
-
             setLoading(true);
-
-
-            const response =
-                await API.post(
-
-                    "/auth/verify-signup-otp",
-
-                    {
-                        email,
-                        otp
-                    }
-
-                );
-
-
+            const response = await API.post("/auth/verify-signup-otp", { email,  otp });
             const authData = {
-
                 ...response.data.user,
-
                 token : response.data.token,
-
             };
-
-
-            localStorage.setItem(
-
-                "user",
-
-                JSON.stringify(
+            localStorage.setItem("user", JSON.stringify(
                     authData
                 )
-
             );
-
-
             dispatch({
-
                 type: "LOGIN",
-
-                payload:
-                    authData
-
+                payload: authData
             });
-
-
-            sessionStorage.removeItem(
-                "signupEmail"
-            );
-
-
-            toast.success(
-
-                response.data.message ||
-
-                "Account verified successfully"
-
-            );
-
-
-            navigate(
-                "/",
-                {
-                    replace: true
-                }
-            );
-
-
+            sessionStorage.removeItem("signupEmail");
+            toast.success(response.data.message || "Account verified successfully");
+            navigate( "/", { replace: true });
         } catch (error) {
-
-            console.error(
-                "OTP Verification Error:",
-                error
-            );
-
-            toast.error(
-                error.response?.data?.message ||
-                "OTP verification failed"
-            );
-
+            console.error("OTP Verification Error:", error);
+            toast.error(error.response?.data?.message || "OTP verification failed");
         } finally {
-
             setLoading(false);
-
         }
-
     };
-
-
-    // ============================
-    // RESEND OTP
-    // ============================
-
-    const handleResendOTP =
-        async () => {
-
-
+    const handleResendOTP = async () => {
         if (timer > 0 || resendLoading) {
             return;
         }
-
-
         if (!email) {
-
-            toast.error(
-                "Signup session not found. Please signup again."
-            );
-
-            navigate(
-                "/signup",
-                {
-                    replace: true
-                }
-            );
-
+            toast.error("Signup session not found. Please signup again.");
+            navigate("/signup",  {  replace: true });
             return;
-
         }
-
-
         try {
-
-            setResendLoading(
-                true
-            );
-
-
-            const response =
-                await API.post(
-
+            setResendLoading(true);
+            const response = await API.post(
                     "/auth/resend-signup-otp",
-
                     {
                         email
                     }
-
                 );
-
-
-            toast.success(
-                response.data.message
-            );
-
-
-            // Clear previous OTP
-
+            toast.success(response.data.message);
             setOtp("");
-
-
-            // Restart countdown
-
             setTimer(60);
-
-
         } catch (error) {
-
-            console.error(
-
-                "Resend OTP Error:",
-
-                error
-
-            );
-
-
-            
-
-
-            // If backend provides
-            // remaining seconds
-
-            if (
-                error.response
-                    ?.data
-                    ?.remainingSeconds
-            ) {
-
-                setTimer(
-
-                    error.response
-                        .data
-                        .remainingSeconds
-
-                );
-
+            console.error("Resend OTP Error:", error);
+            if (error.response?.data?.remainingSeconds) {
+                setTimer(error.response.data.remainingSeconds);
             }
-
-            toast.error(
-
-                error.response
-                    ?.data
-                    ?.message ||
-
-                "Unable to resend OTP"
-
-            );
-
-
+            toast.error(error.response?.data?.message || "Unable to resend OTP");
         } finally {
-
-            setResendLoading(
-                false
-            );
-
+            setResendLoading(false);
         }
-
     };
-
-
-    // ============================
-    // OTP INPUT
-    // ============================
-
-    const handleOTPChange =
-        (e) => {
-
-
-        const value =
-            e.target.value.replace(
+    const handleOTPChange = (e) => {
+        const value =  e.target.value.replace(
                 /\D/g,
                 ""
             );
-
-
-        if (
-            value.length <= 6
-        ) {
-
-            setOtp(
-                value
-            );
-
+        if (value.length <= 6) {
+            setOtp(value);
         }
-
     };
 
-
     return (
-
-        <div
-            className="verify-otp-page"
-        >
-
-
-            <div
-                className="verify-otp-card"
-            >
-
-
-                <div
-                    className="verify-otp-icon"
-                >
-
+        <div className="verify-otp-page">
+            <div className="verify-otp-card">
+                <div className="verify-otp-icon">
                     ✉️
-
                 </div>
-
-
-                <p
-                    className="verify-otp-badge"
-                >
-
+                <p className="verify-otp-badge">
                     EMAIL VERIFICATION
-
                 </p>
-
-
                 <h1>
-
                     Verify Your Account
-
                 </h1>
-
-
-                <p
-                    className="verify-otp-description"
-                >
-
+                <p className="verify-otp-description">
                     We've sent a
                     6-digit verification
-                    code to
-
+                    code t
                 </p>
-
-
                 <p
                     className="verify-otp-email"
                 >
-
                     {
                         email ||
                         "your email"
                     }
-
                 </p>
-
-
                 <form
-
                     onSubmit={
                         handleSubmit
                     }
-
                     className="verify-otp-form"
-
                 >
-
-
                     <label>
-
                         Enter OTP
-
                     </label>
-
-
                     <input
-
                         type="text"
-
                         inputMode="numeric"
-
                         maxLength="6"
-
                         placeholder="000000"
-
                         value={otp}
-
-                        onChange={
-                            handleOTPChange
-                        }
-
+                        onChange={handleOTPChange}
                         autoFocus
-
                         required
-
                     />
-
-
                     <button
-
                         type="submit"
-
                         disabled={
-
                             loading ||
-
                             otp.length !== 6
-
                         }
-
                     >
-
                         {
-
                             loading
-
                                 ? "Verifying..."
-
                                 : "Verify Account"
-
                         }
-
                     </button>
-
-
                 </form>
-
-
-                {/* RESEND SECTION */}
-
-
                 <div
                     className="verify-otp-help"
                 >
-
-
                     <p>
-
                         Didn't receive
                         the OTP?
-
                     </p>
-
-
                     {
-
                         timer > 0
-
                             ? (
-
                                 <p
                                     className="verify-otp-timer"
                                 >
-
                                     Resend OTP in{" "}
-
                                     <strong>
-
                                         {timer}s
-
                                     </strong>
-
                                 </p>
-
                             )
-
                             : (
-
                                 <button
-
                                     type="button"
-
                                     className="verify-otp-resend-btn"
-
                                     onClick={
                                         handleResendOTP
                                     }
-
                                     disabled={
                                         resendLoading
                                     }
-
                                 >
-
                                     {
-
                                         resendLoading
-
                                             ? "Sending..."
-
                                             : "Resend OTP"
-
                                     }
-
                                 </button>
-
                             )
-
                     }
-
-
                 </div>
-
-
                 <Link
-
                     to="/signup"
-
                     className="verify-otp-back"
-
                 >
-
                     ← Back to Signup
-
                 </Link>
-
-
             </div>
-
-
         </div>
-
     );
-
 };
 
 
